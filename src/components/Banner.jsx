@@ -7,25 +7,29 @@ import {useEffect, useState} from 'react'
 import '../styles/Banner.css'
 
 function Banner () {
-    const [logo, setLogo] = useState();
+    const [logo, setLogo] = useState({isFetching: true});
     const rootUrl = "http://localhost:1337"
 
     useEffect(() => {
         fetch(`${rootUrl}/api/assets/1?populate=media`)
             .then(res => res.json())
             .then(json => {
-                setLogo(json)
+                setLogo({isFetching: false,
+                    logo:json})
             })
     }, []);
 
+    // Image en dur pour debug
+    {/* <img src="http://localhost:1337/uploads/thumbnail_Logo_T_Re_BOR_1_525027ca06.jpg" alt="logo-trebor-dur" /> */}
+
     return (
+        logo.isFetching ? <div>Loading...</div> : (
         <div className="banner-container">
             <Networks divName="ntw-div-banner" imgName="ntw-img-banner" />
-            {/* <img src={`${rootUrl}${logo.data.attributes.media.data.attributes.formats.thumbnail.url}`} alt="logo-trebor" /> */}
-            <img src="http://localhost:1337/uploads/thumbnail_Logo_T_Re_BOR_1_525027ca06.jpg" alt="logo-trebor-dur" />
+            <img src={`${rootUrl}${logo.logo.data.attributes.media.data.attributes.formats.thumbnail.url}`} alt="logo-trebor" />
             <Nav />
         </div>
-    )
+    ))
 }
 
 export default Banner
