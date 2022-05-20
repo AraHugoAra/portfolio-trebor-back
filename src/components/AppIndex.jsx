@@ -1,6 +1,7 @@
 import Banner from "./Banner"
 import Footer from "./Footer"
 import LatestMusic from "./LatestMusic"
+import LatestVideos from "./LatestVideos"
 
 function AppIndex() {
 
@@ -8,6 +9,7 @@ function AppIndex() {
     <>
     <Banner />
     <LatestMusic />
+    <LatestVideos />
     <Footer />
     </>
   );

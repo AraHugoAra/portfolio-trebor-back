@@ -31,22 +31,29 @@ function LatestMusic() {
 
 // Liens en dur pour debug
 
-{/* <img src="http://localhost:1337/uploads/small_miniature_sun_starts_shining_herbe_add77c58d1.jpg" alt="cover-sss-endur" />
-<a className='btn-test' href="https://open.spotify.com/album/46bZcuev4Gl9xgZGVh2cAu?si=h0m_aIQQRPygUePJBR1h5w&nd=1" >Stream</a> */}
+/* <img src="http://localhost:1337/uploads/small_miniature_sun_starts_shining_herbe_add77c58d1.jpg" alt="cover-sss-endur" />
+<a className='btn-test' href="https://open.spotify.com/album/46bZcuev4Gl9xgZGVh2cAu?si=h0m_aIQQRPygUePJBR1h5w&nd=1" >Stream</a> */
 
 
     return (
-        state.isFetching === true ? <div>Loading...</div> : 
-
         <div style={{backgroundColor: "#d7ecff",
                      alignItems: "center",
+                     textAlign: "center",
                      display: "flex",
                      flexDirection: "column"}}>
             <h2>Available Now</h2>
-            <img style={{width: "500px", height: "500px"}} 
-                 src={`http://localhost:1337${state.image.data[0].attributes.cover.data.attributes.formats.small.url}`} 
-                 alt={`cover-${state.image.data[0].attributes.title}`} />
-            <a className='btn-test' href={state.image.data[0].attributes.link} >Stream</a>               
+            {state.isFetching === true ? (
+            <div>
+                Loading...
+            </div> 
+            ) : (
+            <div>
+                <img style={{width: "500px", height: "500px"}} 
+                    src={`http://localhost:1337${state.image.data[0].attributes.cover.data.attributes.formats.small.url}`} 
+                    alt={`cover-${state.image.data[0].attributes.title}`} />
+                <br />
+                <a className='btn-test' href={state.image.data[0].attributes.link} >Stream</a>
+            </div>)}            
         </div>
     )
 }

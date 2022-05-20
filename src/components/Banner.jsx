@@ -23,13 +23,13 @@ function Banner () {
     {/* <img src="http://localhost:1337/uploads/thumbnail_Logo_T_Re_BOR_1_525027ca06.jpg" alt="logo-trebor-dur" /> */}
 
     return (
-        logo.isFetching ? <div>Loading...</div> : (
         <div className="banner-container">
             <Networks divName="ntw-div-banner" imgName="ntw-img-banner" />
-            <img src={`${rootUrl}${logo.logo.data.attributes.media.data.attributes.formats.thumbnail.url}`} alt="logo-trebor" />
+        {logo.isFetching ? <div>Loading...</div> :
+            (<img src={`${rootUrl}${logo.logo.data.attributes.media.data.attributes.formats.thumbnail.url}`} alt="logo-trebor" />)}
             <Nav />
         </div>
-    ))
+    )
 }
 
 export default Banner
