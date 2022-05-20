@@ -22,7 +22,7 @@ function Carousel() {
             </div> 
             ) : (
             <div>
-                {state.videos.data.map((item, index) => index === current && <div dangerouslySetInnerHTML={{__html:`${item.attributes.html}`}} />)} 
+                {state.videos.data.map((item, index) => index === current && <div key={index} dangerouslySetInnerHTML={{__html:`${item.attributes.html}`}} />)} 
                 <ButtonCarousel action="+" content="next" current={current} setCurrent={setCurrent} videosLength={state.videos.data.length} />
                 <ButtonCarousel action="-" content="prev" current={current} setCurrent={setCurrent} videosLength={state.videos.data.length} />
             </div>
