@@ -37,6 +37,8 @@ function LatestMusic() {
 
     return (
         <div style={{backgroundColor: "#d7ecff",
+                     height:"720px",
+                     justifyContent: "center",
                      alignItems: "center",
                      textAlign: "center",
                      display: "flex",

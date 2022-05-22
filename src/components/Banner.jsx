@@ -26,7 +26,7 @@ function Banner () {
         <div className="banner-container">
             <Networks divName="ntw-div-banner" imgName="ntw-img-banner" />
         {logo.isFetching ? <div>Loading...</div> :
-            (<img src={`${rootUrl}${logo.logo.data.attributes.media.data.attributes.formats.thumbnail.url}`} alt="logo-trebor" />)}
+            (<img style={{height: "100px"}} src={`${rootUrl}${logo.logo.data.attributes.media.data.attributes.formats.thumbnail.url}`} alt="logo-trebor" />)}
             <Nav />
         </div>
     )
