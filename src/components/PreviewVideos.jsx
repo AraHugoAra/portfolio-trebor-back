@@ -1,6 +1,6 @@
 import Carousel from './Carousel'
 
-function LatestVideos() {
+function PreviewVideos() {
 
     return (
         <div style={{   backgroundColor: "#c6ffd3", 
@@ -10,9 +10,11 @@ function LatestVideos() {
                         height:"820px",
                         justifyContent:"center",
                     }}>
+            <h1>Videos</h1>
             <Carousel />
+            <a href=""><h2>View All Videos</h2></a>
         </div>
     )
 }
 
-export default LatestVideos
+export default PreviewVideos

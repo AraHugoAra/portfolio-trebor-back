@@ -1,7 +1,8 @@
 import Banner from "./Banner"
 import Footer from "./Footer"
-import LatestMusic from "./LatestMusic"
-import LatestVideos from "./LatestVideos"
+import PreviewMusic from "./PreviewMusic"
+import PreviewVideos from "./PreviewVideos"
+import PreviewShop from "./PreviewShop"
 import Subscribe from "./Subscribe";
 
 function AppIndex() {
@@ -9,8 +10,9 @@ function AppIndex() {
   return (
     <>
     <Banner />
-    <LatestMusic />
-    <LatestVideos />
+    <PreviewMusic />
+    <PreviewShop />
+    <PreviewVideos />
     <Subscribe />
     <Footer />
     </>

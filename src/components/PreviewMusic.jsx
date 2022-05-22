@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import '../styles/Banner.css'
 
-function LatestMusic() {
+function PreviewMusic() {
 
  const [state, setState] = useState({isFetching: true,})
 
@@ -43,6 +43,7 @@ function LatestMusic() {
                      textAlign: "center",
                      display: "flex",
                      flexDirection: "column"}}>
+            <h1>Music</h1>
             <h2>Available Now</h2>
             {state.isFetching === true ? (
             <div>
@@ -55,9 +56,10 @@ function LatestMusic() {
                     alt={`cover-${state.image.data[0].attributes.title}`} />
                 <br />
                 <a className='btn-test' href={state.image.data[0].attributes.link} >Stream</a>
-            </div>)}            
+            </div>)}
+            <a href=""><h2>View All Releases</h2></a>            
         </div>
     )
 }
 
-export default LatestMusic
+export default PreviewMusic
