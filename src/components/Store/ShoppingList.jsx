@@ -1,0 +1,56 @@
+import { useEffect, useState } from "react"
+import ShopItem from "./ShopItem"
+
+function ShoppingList({activeCategory, cart, updateCart}) {
+
+    const [state, setState] = useState({isFetching: true})
+
+    useEffect(() => {
+        fetch("http://localhost:1337/api/shop-items?populate=image,category")
+            .then(data => data.json())
+            .then(json => setState({items: json.data, isFetching: false}))
+    }, [])
+
+    return (
+        <div>
+            <ul style={{
+                height: "600px",
+                display: "flex",
+                flexWrap: "wrap",
+                flexDirection: "row",
+                listStyle: "none"
+                }}>
+            {state.isFetching ? 
+                (<p>Loading...</p>
+                ) : (
+                activeCategory.length !== 0 ? (
+                    state.items.map(item => activeCategory.indexOf(`${item.attributes.category.data.attributes.name}`) !== -1  && 
+                        (<li key={item.id}> 
+                            <ShopItem   itemUrl={item.attributes.image.data.attributes.formats.thumbnail.url}
+                                        itemName={item.attributes.name}
+                                        itemId={item.id}
+                                        itemPrice={item.attributes.price}
+                                        cart={cart} 
+                                        updateCart={updateCart}
+                            />
+                        </li>)
+                )) : (
+                    state.items.map(item => 
+                        <li key={item.id}>
+                            <ShopItem   itemUrl={item.attributes.image.data.attributes.formats.thumbnail.url}
+                                        itemName={item.attributes.name}
+                                        itemId={item.id}
+                                        itemPrice={item.attributes.price}
+                                        cart={cart} 
+                                        updateCart={updateCart}
+                            />
+                        </li>)
+                )
+
+            )}
+            </ul>
+        </div>
+    )
+}
+
+export default ShoppingList

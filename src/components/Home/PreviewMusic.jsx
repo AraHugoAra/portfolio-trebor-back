@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import '../styles/Banner.css'
+import '../../styles/Banner.css'
 
 function PreviewMusic() {
 
@@ -57,7 +57,7 @@ function PreviewMusic() {
                 <br />
                 <a className='btn-test' href={state.image.data[0].attributes.link} >Stream</a>
             </div>)}
-            <a href=""><h2>View All Releases</h2></a>            
+            <a href="http://localhost:3000/"><h2>View All Releases</h2></a>            
         </div>
     )
 }

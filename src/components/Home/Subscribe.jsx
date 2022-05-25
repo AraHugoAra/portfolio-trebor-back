@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
-import '../styles/App.css'
+import '../../styles/App.css'
 
 function Subscribe() {
 
     const [input, setInput] = useState("")
-    const [status, setStatus] = useState("none")
+// email input status: waiting = waiting for input / neutral ; valid = subscriber added ; unvalid = uncorrect email format
+    const [status, setStatus] = useState("waiting")
 
     function handleInput(e) {
         setInput(e.target.value)
@@ -13,6 +14,7 @@ function Subscribe() {
     function handleSubmit(e) {
         e.preventDefault();
         const data = {email: `${input}`};
+// eslint-disable-next-line
         const mailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (`${input}`.match(mailFormat)) {
             fetch('http://localhost:1337/api/subscribers', {
@@ -31,7 +33,7 @@ function Subscribe() {
 
     useEffect (function clearInput() {
         const timer = status === "unvalid" ? (
-            setTimeout(() => {setInput(""); setStatus("none")}, 4000)
+            setTimeout(() => {setInput(""); setStatus("waiting")}, 4000)
         ) : (null)
         return () => clearTimeout(timer)
     }, [status])

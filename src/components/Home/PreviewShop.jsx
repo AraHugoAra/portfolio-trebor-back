@@ -31,12 +31,12 @@ function PreviewShop() {
                         <div key={`div-${item.id}`}>
                             <img key={`img-${item.id}`} src={`${baseUrl}${item.attributes.image.data.attributes.formats.medium.url}`} alt="best-seller" />
                             <br key={`br-${item.id}`}/>
-                            <a className="btn-test" href="" key={`link-${item.id}`}>Buy Now</a>
+                            <a className="btn-test" href="http://localhost:3000/store" key={`link-${item.id}`}>Buy Now</a>
                         </div>      
             ))}
                 </div>
             )}
-                <a href=""><h2>Shop All</h2></a>
+                <a href="http://localhost:3000/store"><h2>Shop All</h2></a>
         </div>
     )
 }

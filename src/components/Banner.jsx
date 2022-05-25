@@ -20,7 +20,7 @@ function Banner () {
     }, []);
 
     // Image en dur pour debug
-    {/* <img src="http://localhost:1337/uploads/thumbnail_Logo_T_Re_BOR_1_525027ca06.jpg" alt="logo-trebor-dur" /> */}
+    // <img src="http://localhost:1337/uploads/thumbnail_Logo_T_Re_BOR_1_525027ca06.jpg" alt="logo-trebor-dur" />
 
     return (
         <div className="banner-container">
