@@ -13,7 +13,8 @@ function Store() {
                 display: "flex",
                 flexDirection: "row-reverse",
                 justifyContent: "space-between",
-                alignItems: "stretch"
+                alignItems: "stretch",
+                columnCount: "3"
             }}>
             <Categories activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
             <ShoppingList activeCategory={activeCategory} cart={cart} updateCart={updateCart} />

@@ -47,7 +47,7 @@ function Subscribe() {
                      textAlign: "center",
                      height: "700px"
                     }}>
-            <h2>Subscribe</h2>
+            <h2 id="subscribe">Subscribe</h2>
             <form>
             <input  className={status !== "unvalid" || input === "" ? "formInput--valid" : "formInput--unvalid"} 
                     style={{width: "200px"}}

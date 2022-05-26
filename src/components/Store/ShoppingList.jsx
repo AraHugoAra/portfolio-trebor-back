@@ -18,7 +18,9 @@ function ShoppingList({activeCategory, cart, updateCart}) {
                 display: "flex",
                 flexWrap: "wrap",
                 flexDirection: "row",
-                listStyle: "none"
+                justifyContent: "flex-start",
+                listStyle: "none",
+                columnCount: "3"
                 }}>
             {state.isFetching ? 
                 (<p>Loading...</p>
@@ -30,6 +32,7 @@ function ShoppingList({activeCategory, cart, updateCart}) {
                                         itemName={item.attributes.name}
                                         itemId={item.id}
                                         itemPrice={item.attributes.price}
+                                        itemInStock={item.attributes.inStock}
                                         cart={cart} 
                                         updateCart={updateCart}
                             />
@@ -41,6 +44,7 @@ function ShoppingList({activeCategory, cart, updateCart}) {
                                         itemName={item.attributes.name}
                                         itemId={item.id}
                                         itemPrice={item.attributes.price}
+                                        itemInStock={item.attributes.inStock}
                                         cart={cart} 
                                         updateCart={updateCart}
                             />

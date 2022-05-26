@@ -57,7 +57,7 @@ function PreviewMusic() {
                 <br />
                 <a className='btn-test' href={state.image.data[0].attributes.link} >Stream</a>
             </div>)}
-            <a href="http://localhost:3000/"><h2>View All Releases</h2></a>            
+            <a href="/music"><h2>View All Releases</h2></a>            
         </div>
     )
 }

@@ -3,6 +3,7 @@ import Networks from './Networks'
 import Nav from './Nav'
 // React stuff
 import {useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
 // Styles
 import '../styles/Banner.css'
 
@@ -26,7 +27,7 @@ function Banner () {
         <div className="banner-container">
             <Networks divName="ntw-div-banner" imgName="ntw-img-banner" />
         {logo.isFetching ? <div>Loading...</div> :
-            (<img style={{height: "100px"}} src={`${rootUrl}${logo.logo.data.attributes.media.data.attributes.formats.thumbnail.url}`} alt="logo-trebor" />)}
+            (<Link to="/"><img style={{height: "100px"}} src={`${rootUrl}${logo.logo.data.attributes.media.data.attributes.formats.thumbnail.url}`} alt="logo-trebor" /></Link>  )}
             <Nav />
         </div>
     )

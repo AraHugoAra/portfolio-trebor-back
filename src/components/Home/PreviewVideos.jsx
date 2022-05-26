@@ -12,7 +12,7 @@ function PreviewVideos() {
                     }}>
             <h1>Videos</h1>
             <Carousel />
-            <a href="http://localhost:3000/"><h2>View All Videos</h2></a>
+            <a href="/videos"><h2>View All Videos</h2></a>
         </div>
     )
 }

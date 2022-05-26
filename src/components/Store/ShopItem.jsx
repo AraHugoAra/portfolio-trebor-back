@@ -1,4 +1,4 @@
-function ShopItem({itemName, itemUrl, itemId, itemPrice, cart, updateCart}) {
+function ShopItem({itemName, itemUrl, itemId, itemPrice, cart, updateCart, itemInStock}) {
 
     const baseUrl = "http://localhost:1337"
     const currentItemAdded = cart.find((item) => item.name === itemName)
@@ -25,9 +25,13 @@ function ShopItem({itemName, itemUrl, itemId, itemPrice, cart, updateCart}) {
         <div style={{margin: "30px"}}>
             <img src={`${baseUrl}${itemUrl}`} alt={`img-${itemId}`} />
             <h3>{itemName}</h3>
-            {itemPrice}€
+            {!itemInStock ? ( 
+                <p style={{color:"red",fontStyle:"italic"}}>Not available <span style={{textDecoration:'line-through'}}>{itemPrice}€</span></p>
+            ) : (
+                <p>{itemPrice}€</p>
+            )}
             {!currentItemAdded ? (
-                <button onClick={addToCart} >🛒</button>
+                <button onClick={addToCart} disabled={!itemInStock && true} >🛒</button>
             ) : (
                 <div style={{display: "flex", justifyContent: "space-evenly"}}>
                 <button onClick={addToCart} >➕</button>
