@@ -17,7 +17,6 @@ function Videos() {
             <p>Loading...</p>
         ) : (
         <div>
-            <button onClick={() => console.log(state)}>state</button>
             <ul>
             {state.videos.data.map(item => 
                 <li key={item.id}>

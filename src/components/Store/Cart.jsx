@@ -5,11 +5,11 @@ function Cart({cart, updateCart}) {
     const initialTotal = 0
     const totalCart = cart.reduce((acc, currItem) => acc + (currItem.price * currItem.amount), initialTotal)
   
-    useEffect(() => {{(totalCart === 0) ? (
+    useEffect(() => {(totalCart === 0) ? (
         document.title ='TRéBOR 🛒 empty'
         ) : (
         document.title =`TRéBOR 🛒 ${totalCart}€`
-        )}}, [cart])
+        )}, [totalCart])
 
     return isOpen ? (
         <div style={{
