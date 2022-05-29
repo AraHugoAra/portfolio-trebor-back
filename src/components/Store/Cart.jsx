@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Checkout from './Checkout'
 
 function Cart({cart, updateCart}) {
     const [isOpen, setIsOpen] = useState(true)
@@ -29,6 +30,7 @@ function Cart({cart, updateCart}) {
             <h2>Total: {totalCart}€</h2>
             <button style={{position: 'absolute', top: '800px'}} onClick={() => setIsOpen(false)} >Fermer</button>
             <button onClick={() => updateCart([])} >Vider le panier</button>
+            <Checkout cart={cart} />
         </div>
     ) : (<button style={{height: "20px"}}className="lmj-open-button" onClick={() => setIsOpen(true)} >Ouvrir</button>) 
 }

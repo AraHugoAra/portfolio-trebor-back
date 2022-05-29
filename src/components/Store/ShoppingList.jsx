@@ -35,6 +35,7 @@ function ShoppingList({activeCategory, cart, updateCart}) {
                                         itemInStock={item.attributes.inStock}
                                         cart={cart} 
                                         updateCart={updateCart}
+                                        itemStripeApi={item.attributes.stripeApi}
                             />
                         </li>)
                 )) : (
@@ -47,6 +48,7 @@ function ShoppingList({activeCategory, cart, updateCart}) {
                                         itemInStock={item.attributes.inStock}
                                         cart={cart} 
                                         updateCart={updateCart}
+                                        itemStripeApi={item.attributes.stripeApi}
                             />
                         </li>)
                 )

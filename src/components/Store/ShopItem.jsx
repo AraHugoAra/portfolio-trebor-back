@@ -1,4 +1,4 @@
-function ShopItem({itemName, itemUrl, itemId, itemPrice, cart, updateCart, itemInStock}) {
+function ShopItem({itemName, itemUrl, itemId, itemPrice, cart, updateCart, itemInStock, itemStripeApi}) {
 
     const baseUrl = "http://localhost:1337"
     const currentItemAdded = cart.find((item) => item.name === itemName)
@@ -8,14 +8,14 @@ function ShopItem({itemName, itemUrl, itemId, itemPrice, cart, updateCart, itemI
         if (currentItemAdded) {
             updateCart([
 				...cartFilteredCurrentItem,
-				{ name: itemName, price: itemPrice, amount: currentItemAdded.amount + 1 }
+				{ name: itemName, price: itemPrice, stripeApi: itemStripeApi ,amount: currentItemAdded.amount + 1 }
 			])} else {
-        updateCart([...cart, {name: itemName, price: itemPrice, amount: 1}])
+        updateCart([...cart, {name: itemName, price: itemPrice, stripeApi: itemStripeApi ,amount: 1}])
     }}
 
     function deleteFromCart() {
         currentItemAdded.amount > 1 ? (
-            updateCart([...cartFilteredCurrentItem, {name: itemName, price: itemPrice, amount: currentItemAdded.amount -1}])
+            updateCart([...cartFilteredCurrentItem, {name: itemName, price: itemPrice, stripeApi: itemStripeApi ,amount: currentItemAdded.amount -1}])
         ) : (
             updateCart(cartFilteredCurrentItem)
         )
