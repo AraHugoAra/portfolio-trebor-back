@@ -3,16 +3,10 @@ import Carousel from './Carousel'
 function PreviewVideos() {
 
     return (
-        <div style={{   backgroundColor: "#c6ffd3", 
-                        display:"flex", 
-                        flexDirection: "column", 
-                        alignItems:"center", 
-                        height:"820px",
-                        justifyContent:"center",
-                    }}>
-            <h1>Videos</h1>
+        <div className='preview-videos'>
+            <h1 className='preview-videos__title'>Videos</h1>
             <Carousel />
-            <a href="/videos"><h2>View All Videos</h2></a>
+            <a className='preview-videos__view-all' href="/videos"><h2>View All Videos</h2></a>
         </div>
     )
 }

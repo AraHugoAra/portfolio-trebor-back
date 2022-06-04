@@ -1,0 +1,14 @@
+.networks {
+    list-style: none;
+    padding-left: 40px;
+    align-items: center;
+    display: flex;
+    &__logo {
+        margin-right: 15px;
+        max-width: 40px;
+        height: auto;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}

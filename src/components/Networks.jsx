@@ -1,23 +1,35 @@
 import {useState, useEffect} from 'react'
 
-function Networks({imgName, divName}) {
+function Networks({className}) {
 
-    const [networks, setNetworks] = useState([])
+    const [state, setState] = useState({isLoading: true})
     
     useEffect(() => {
-        fetch("http://localhost:1337/api/networks?populate=icon&link")
+        fetch("http://localhost:1337/api/networks?populate=icon,iconWhite")
             .then(res => res.json())
             .then(json => {
-                setNetworks(json.data)
+                setState({networks: json.data, isLoading: false})
             })
         }
     ,[])
 
     return (
-        <div className={divName}>
-        {networks.map(item => (<a key={`link-${item.id}`} href={item.attributes.link}><img className={imgName} key={`img-${item.id}`} src={`http://localhost:1337${item.attributes.icon.data.attributes.formats.thumbnail.url}`} alt={item.attributes.name} /></a>))}
-        </div>
-
+        state.isLoading === true ? (
+            <div>Loading...</div>
+        ) : (
+        <div className={className} >
+            <ul className='networks'>
+                {state.networks.map(item => 
+                    (<li key={`link-${item.id}`}>
+                        <a href={item.attributes.link}>
+                        <img    className="networks__logo" key={`img-${item.id}`} 
+                                src={className === "footer__networks" ? `http://localhost:1337${item.attributes.iconWhite.data.attributes.formats.thumbnail.url}` : `http://localhost:1337${item.attributes.icon.data.attributes.formats.thumbnail.url}`}
+                                alt={item.attributes.name} />
+                        </a>
+                    </li>)
+                    )}
+            </ul>
+        </div>)
     )
 }
 

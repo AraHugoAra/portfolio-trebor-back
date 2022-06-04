@@ -2,7 +2,7 @@ function Github() {
 
     return (
         <div>
-            <a href="https://github.com">Check out the code</a>
+            <a className="footer__github" href="https://github.com/AraHugoAra?tab=repositories">Check out the code. It's homemade!</a>
         </div>
     )
 }

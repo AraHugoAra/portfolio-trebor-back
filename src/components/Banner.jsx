@@ -4,8 +4,6 @@ import Nav from './Nav'
 // React stuff
 import {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
-// Styles
-import '../styles/Banner.css'
 
 function Banner () {
     const [logo, setLogo] = useState({isFetching: true});
@@ -24,10 +22,10 @@ function Banner () {
     // <img src="http://localhost:1337/uploads/thumbnail_Logo_T_Re_BOR_1_525027ca06.jpg" alt="logo-trebor-dur" />
 
     return (
-        <div className="banner-container">
-            <Networks divName="ntw-div-banner" imgName="ntw-img-banner" />
+        <div className='banner'>
+            <Networks className="banner__networks"/>
         {logo.isFetching ? <div>Loading...</div> :
-            (<Link to="/"><img style={{height: "100px"}} src={`${rootUrl}${logo.logo.data.attributes.media.data.attributes.formats.thumbnail.url}`} alt="logo-trebor" /></Link>  )}
+            (<Link to="/"><img className="banner__logo" src={`${rootUrl}${logo.logo.data.attributes.media.data.attributes.formats.thumbnail.url}`} alt="logo-trebor" /></Link>  )}
             <Nav />
         </div>
     )

@@ -2,6 +2,9 @@
 import { Routes, Route } from 'react-router-dom'
 import "@stripe/stripe-js"
 
+// Styles
+import "./sass/main.scss"
+
 // Components
 import Home from "./components/Home/Home"
 import Store from './components/Store/Store';
@@ -25,7 +28,7 @@ function App() {
         <Route path="/music" element={<Music />} />
         <Route path="/videos" element={<Videos />} />
       </Routes>
-        <Footer />
+        <Footer  />
     </>
   );
 }

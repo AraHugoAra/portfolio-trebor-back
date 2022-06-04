@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import '../../styles/App.css'
 
 function Subscribe() {
 
@@ -39,25 +38,17 @@ function Subscribe() {
     }, [status])
 
     return (
-        <div style={{backgroundColor: "#d8d8d8", 
-                     display: "flex", 
-                     flexDirection: "column", 
-                     justifyContent: "flex-start", 
-                     alignItems: "center",
-                     textAlign: "center",
-                     height: "700px"
-                    }}>
-            <h2 id="subscribe">Subscribe</h2>
-            <form>
-            <input  className={status !== "unvalid" || input === "" ? "formInput--valid" : "formInput--unvalid"} 
-                    style={{width: "200px"}}
+        <div className='subscribe'>
+            <form className='subscribe__form'>
+            <h1 className='subscribe__title' id="subscribe">Subscribe</h1>
+            <input  className={status !== "unvalid" || input === "" ? "formInput--valid" : "unvalid"}
                     name="form-input" type="email" 
-                    placeholder='jean-michel.blanquer@elysee.fr' required 
+                    placeholder='Email Address (required)' required 
                     onChange={(e) => handleInput(e)}>
             </input>
             <button onClick={handleSubmit}>Submit</button>
-            {status === "unvalid" && <p style={{color: "red", fontStyle: "italic"}}>Email appeared to be unvalid. Please try again.</p>}
-            {status === "valid" && <p style={{color: "green", fontStyle: "italic"}}>Welcome to our subscribers!</p>}
+            {status === "unvalid" && <p className='unvalid'>The email "{input}" appeared to be unvalid. Please try again.</p>}
+            {status === "valid" && <p className='valid'>Welcome to our subscribers!</p>}
             </form>
         </div>
     )

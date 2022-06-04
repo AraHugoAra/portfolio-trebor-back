@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 function PreviewShop() {
 
     const [state, setState] = useState({isFetching: true})
+    const [display, setDisplay] = useState("notdisplayed")
     const baseUrl = "http://localhost:1337"
 
     useEffect(() => {
@@ -11,32 +12,36 @@ function PreviewShop() {
             .then(json => setState({items: json.data, isFetching: false}))
 
     }, [])
+
+    const showButton = e => {
+        e.preventDefault();
+        setDisplay("displayed");
+    };
     
+    const hideButton = e => {
+        e.preventDefault();
+        setDisplay("notdisplayed");
+    };
 
     return (
-        <div style={{height: "750px", 
-                     background: "#ffe5e8",
-                     display: "flex",
-                     flexDirection: "column",
-                     justifyContent: "center",
-                     alignItems: "center",
-                     textAlign: "center"
-                    }}>
-            <h1>Store</h1>
+        <div className="preview-shop">
+            <h1 className="preview-shop__title">Store</h1>
             {state.isFetching ? (
                 <div>Loading...</div>
             ) : (
-                <div>
-                        {state.items.map(item => item.attributes.bestSale === true && (
-                        <div key={`div-${item.id}`}>
-                            <img key={`img-${item.id}`} src={`${baseUrl}${item.attributes.image.data.attributes.formats.medium.url}`} alt="best-seller" />
-                            <br key={`br-${item.id}`}/>
-                            <a className="btn-test" href="http://localhost:3000/store" key={`link-${item.id}`}>Buy Now</a>
+                <div className="preview-shop__content">
+                        {state.items.map((item, index) => ((item.attributes.bestSale === true) || (index === state.items.length -1))  && (
+                        <div    className="preview-shop__content--productbox"
+                                key={`div-${item.id}`}  
+                                onMouseEnter={e => showButton(e)}
+                                onMouseLeave={e => hideButton(e)}>
+                                <img className="preview-shop__content--cover" key={`img-${item.id}`} src={`${baseUrl}${item.attributes.image.data.attributes.formats.medium.url}`} alt="displayed-items" />  
+                                <a className={`preview-shop__content--${display}`} href="http://localhost:3000/store" key={`link-${item.id}`}><button>Buy Now</button></a>
                         </div>      
             ))}
                 </div>
             )}
-                <a href="http://localhost:3000/store"><h2>Shop All</h2></a>
+                <a className="preview-shop__view-all" href="http://localhost:3000/store"><h2>Shop All</h2></a>
         </div>
     )
 }

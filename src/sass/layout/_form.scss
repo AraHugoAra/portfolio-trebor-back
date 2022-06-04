@@ -1,0 +1,34 @@
+form {
+    padding: 20px;
+    & input {
+        background-color: #120801;
+        border: none;
+        border-bottom: white solid 2px;
+        color: #FFF; 
+        font-size: 1.5rem;
+        width: 400px;
+        height: 50px;
+        margin: 20px;
+
+        &::placeholder {
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+    }
+    & button {
+        margin: 20px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 2rem;
+        padding: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        border-radius: 5px;
+        background-color: #dcd0c6;
+        &:hover {
+            background-color: #FFF;
+            color: #120801;
+        }
+    }
+}

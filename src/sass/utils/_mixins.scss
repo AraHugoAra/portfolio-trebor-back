@@ -1,0 +1,19 @@
+/*
+@mixin preview-title{
+    &__title{
+        text-align: left;
+    }
+}
+
+@mixin preview-view-all{
+    &__view-all{
+        text-align: right;
+    }
+}
+*/
+
+@mixin __title {
+    //position: relative;
+    //top: 10px;
+    margin-left: 5%;
+}
