@@ -1,11 +1,11 @@
 .preview-videos {
-    height: 900px;
-    border-top: black solid 1.5px;
+    height: 930px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #7e5d48;
+    background-image: $background-tertiary;
+    background-position: center bottom;
     &__title {
         position: relative;
         right: 600px;
@@ -13,12 +13,14 @@
     &__view-all{
         height: 50px;
         position: relative;
+        bottom: 70px;
         left: 580px;
         &:hover {
         border-bottom: #26110399 solid 1.5px;
         }
     }
     &__carousel{
+        margin: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -54,6 +56,7 @@
             position: relative;
             bottom: 590px;
             left: 250px;
+            box-shadow: none;
         }
     }
 }

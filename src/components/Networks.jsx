@@ -23,7 +23,7 @@ function Networks({className}) {
                     (<li key={`link-${item.id}`}>
                         <a href={item.attributes.link}>
                         <img    className="networks__logo" key={`img-${item.id}`} 
-                                src={className === "footer__networks" ? `http://localhost:1337${item.attributes.iconWhite.data.attributes.formats.thumbnail.url}` : `http://localhost:1337${item.attributes.icon.data.attributes.formats.thumbnail.url}`}
+                                src={className === "footer__networks" ? `http://localhost:1337${item.attributes.iconWhite.data.attributes.url}` : `http://localhost:1337${item.attributes.icon.data.attributes.url}`}
                                 alt={item.attributes.name} />
                         </a>
                     </li>)

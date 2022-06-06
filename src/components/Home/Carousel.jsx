@@ -62,7 +62,7 @@ function Carousel() {
                 }
             </div>
             )}
-            <button className="preview-videos__button--mute" onClick={handleMute} hidden={!displayed} >🔊</button>
+            <button className="preview-videos__button--mute" onClick={handleMute} hidden={!displayed} >🔉</button>
             <ButtonCarousel action="+" content="next" current={current} setCurrent={setCurrent} setDisplayed={setDisplayed} />
             <ButtonCarousel action="-" content="prev" current={current} setCurrent={setCurrent} setDisplayed={setDisplayed} />
     </div>)

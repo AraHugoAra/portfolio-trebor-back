@@ -1,14 +1,14 @@
 .banner {
     display: flex;
     justify-content: space-between;
-    max-height: 80px;
-    background-color: #bda08e;
+    height: 80px;
+ //   background-color: #ad811b2e;
     &__networks {
         display: flex;
         width: 33%;
     }
     &__logo {
-        max-height: 80px;
+        max-height: 80px; 
     }
     &__nav {
         width: 33%;

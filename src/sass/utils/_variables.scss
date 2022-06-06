@@ -1,8 +1,30 @@
-$colour-primary: #61827a;
-$colour-secondary: #2611034a;
-// $colour-accent: #D6FFF5;
-// $colour-white: #fff;
+//$colour-primary: #4b2309;
+$colour-secondary: rgb(211,188,190);
+$colour-accent: #4b2309;
+$colour-white: #fff;
 // $colour-invalid: #DB464B;
+$coulour-borders: rgba(255, 255, 255, 0.401);
+$coulour-backgrounds: rgba(0, 0, 0, 0.204);
+
+
+// backgrounds v1 (vif jaune-orange)
+/*
+$background-primary: url(http://localhost:1337/uploads/11382_aac8bf3012.jpg?updated_at=2022-06-06T12:41:21.204Z);
+$background-secondary: url(http://localhost:1337/uploads/pexels_luis_quintero_3101527_8bea98b5c7.jpg?updated_at=2022-06-06T12:43:29.566Z);
+$background-tertiary: url(http://localhost:1337/uploads/pexels_md_abdul_halim_2333293_bf25a1fc86.jpg?updated_at=2022-06-05T13:43:12.897Z);
+*/
+// backgrounds v2 (pastel jaune-rouge)
+/*
+$background-primary: url(http://localhost:1337/uploads/11587_48ba74bca4.jpg?updated_at=2022-06-06T13:06:56.240Z);
+$background-secondary: url(http://localhost:1337/uploads/sunny_watercolor_texture_background_a55043c739.jpg?updated_at=2022-06-06T12:53:33.379Z);
+$background-tertiary: url(http://localhost:1337/uploads/orange_photographic_studio_background_vertical_with_soft_vignette_soft_gradient_background_painted_canvas_studio_backdrop_1d4a825586.jpg?updated_at=2022-06-06T13:15:25.552Z);
+*/
+// backgrounds v3 (pastel bleu-violet)
+$background-primary: url(http://localhost:1337/uploads/soft_vintage_gradient_blur_background_with_pastel_colored_well_use_as_studio_room_product_presentation_banner_50e125bc4d.jpg?updated_at=2022-06-06T13:22:20.438Z);
+$background-secondary: url(http://localhost:1337/uploads/v960_ning_05_7721266831.jpg?updated_at=2022-06-06T13:26:23.255Z);
+$background-tertiary: url(http://localhost:1337/uploads/purple_pink_watercolor_texture_background_12848d7cf3.jpg?updated_at=2022-06-06T13:26:47.477Z);
+
+
 
 // $heading-shadow-size: .55rem;
 // $layout-margin: 6rem;
