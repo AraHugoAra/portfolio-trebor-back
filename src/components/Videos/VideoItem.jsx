@@ -1,11 +1,25 @@
+import { useRef, useState } from "react"
+
 function VideoItem({itemName, itemVideo, itemPoster}) {
 
+    const vidRef = useRef(null)
+    const [displayed, setDisplayed] = useState(true)
+
+    function handlePlayVIdeo() {
+        vidRef.current.play()
+        vidRef.current.controls=true
+        setDisplayed(false)
+    }
+
     return (
-        <div>
-            <h2>{itemName}</h2>
-            <video width="600" height="600" controls poster={`http://localhost:1337${itemPoster}`}>
+        <div className = "video-item">
+            <video ref={vidRef} className = "video-item__video" 
+                    width="600" height="600" 
+                    poster={`http://localhost:1337${itemPoster}`}>
                 <source src={`http://localhost:1337${itemVideo}`} />
             </video>
+            <h2 className = "video-item__title">{itemName}</h2>
+            <button hidden={!displayed} onClick={handlePlayVIdeo} className = "video-item__button" >▶</button>
         </div>
     )
 }

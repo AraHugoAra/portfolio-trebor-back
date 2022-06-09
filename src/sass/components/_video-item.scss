@@ -1,0 +1,25 @@
+.video-item {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__title {
+        margin-top: 10px;
+    }
+    &__video {
+        border-radius: 30px;
+    }
+    &__button {
+        background: rgba(0,0,0,0);
+        box-shadow: none;
+        color: rgba(250,250,250,0.8);
+        font-size: 5rem;
+        position: relative;
+        bottom: 382px;
+        padding-left: 25px;
+        &:hover {
+            background-color: $coulour-backgrounds;
+            color: rgba(250,250,250,0.5);
+        }
+    }
+}

@@ -16,9 +16,9 @@ function Videos() {
         state.isFetching ? (
             <p>Loading...</p>
         ) : (
-        <div>
-            <ul>
-            {state.videos.data.map(item => 
+        <div className = "videos">
+            <ul className = "videos__list">
+            {state.videos.data.map((item, index) => 
                 <li key={item.id}>
                     <VideoItem  itemName={item.attributes.title} 
                                 itemVideo={item.attributes.video.data.attributes.url}

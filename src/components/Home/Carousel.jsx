@@ -1,11 +1,12 @@
 import ButtonCarousel from './ButtonCarousel'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 function Carousel() {
 
     const [state, setState] = useState({isFetching: true})
     const [current, setCurrent] = useState(1)
     const [displayed, setDisplayed] = useState(true)
+    const vidRef = useRef(null)
 
     useEffect(() => {
         fetch('http://localhost:1337/api/videos?populate=video,poster')
@@ -16,8 +17,8 @@ function Carousel() {
         }, [])
 
     function handleMute() {
-        document.getElementById('carousel-video').muted=false;
-        document.getElementById('carousel-video').volume=0.6;
+        vidRef.current.muted=false;
+        vidRef.current.volume=0.6;
         setDisplayed(false)
 
     }
@@ -29,7 +30,7 @@ function Carousel() {
             <div  className='preview-videos__videos'>
                 {state.videos.data.map((item, index) => index === current && 
                     <div className='preview-videos__videos--current' key={index}>
-                        <video  id="carousel-video" 
+                        <video  ref={vidRef} 
                                 width="600px" heigth="600px" 
                                 controls autoPlay
                                 muted={true} 
