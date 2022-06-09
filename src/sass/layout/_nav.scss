@@ -3,5 +3,8 @@
         &:hover {
         border-bottom: $colour-accent solid 1.5px;
         }
+        &--active{
+        border-bottom: $colour-accent solid 1.5px;
+        }
     }
 }

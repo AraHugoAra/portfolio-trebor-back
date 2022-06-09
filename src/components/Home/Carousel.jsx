@@ -24,9 +24,7 @@ function Carousel() {
 
     return (<div  className='preview-videos__carousel'>
             {state.isFetching === true ? (
-            <div>
-                Loading...
-            </div> 
+            <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
             ) : (
             <div  className='preview-videos__videos'>
                 {state.videos.data.map((item, index) => index === current && 

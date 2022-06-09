@@ -27,7 +27,7 @@ function PreviewShop() {
         <div className="preview-shop">
             <h1 className="preview-shop__title">Store</h1>
             {state.isFetching ? (
-                <div>Loading...</div>
+                <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
             ) : (
                 <div className="preview-shop__content">
                         {state.items.map((item, index) => ((item.attributes.bestSale === true) || (index === state.items.length -1))  && (

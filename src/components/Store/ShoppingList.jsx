@@ -23,7 +23,7 @@ function ShoppingList({activeCategory, cart, updateCart}) {
                 columnCount: "3"
                 }}>
             {state.isFetching ? 
-                (<p>Loading...</p>
+                (<div className="lds-ring"><div></div><div></div><div></div><div></div></div>
                 ) : (
                 activeCategory.length !== 0 ? (
                     state.items.map(item => activeCategory.indexOf(`${item.attributes.category.data.attributes.name}`) !== -1  && 

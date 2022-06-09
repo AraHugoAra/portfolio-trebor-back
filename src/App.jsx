@@ -22,7 +22,7 @@ function App() {
         <Banner />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/store" element={<Store />} />
+        <Route exact path="/store" element={<Store />} />
           <Route path="/store/cancel" element={<CancelCheckout />} />
           <Route path="/store/success" element={<SuccessChekout />} />
         <Route path="/music" element={<Music />} />

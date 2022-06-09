@@ -1,0 +1,40 @@
+.music {
+    display: flex;
+    justify-content: center;
+    &__list{
+    width: 1600px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+        &--item{
+            margin: 10px;
+            width: 48%;
+        }
+    }
+    &-latest{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 70%;
+        margin-left: 100px;
+        margin-top: 30px;
+        margin-bottom: 55px;
+        &__cover{
+            box-shadow: 2px 2px 4px;
+            width: 50%;
+        }
+        &__infos{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            &--title{
+                text-align: center;
+                width: 100%;
+                font-size: 4rem;
+            }
+        }
+    }
+}

@@ -24,7 +24,7 @@ function Banner () {
     return (
         <div className='banner'>
             <Networks className="banner__networks"/>
-        {logo.isFetching ? <div>Loading...</div> :
+        {logo.isFetching ? <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div> :
             (<Link to="/"><img className="banner__logo" src={`${rootUrl}${logo.logo.data.attributes.media.data.attributes.formats.thumbnail.url}`} alt="logo-trebor" /></Link>  )}
             <Nav />
         </div>

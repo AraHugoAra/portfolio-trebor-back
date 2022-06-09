@@ -16,9 +16,7 @@ function PreviewMusic() {
         <div className='preview-music'>
         <h1 className='preview-music__title'>Music</h1>
             {state.isFetching === true ? (
-            <div>
-                Loading...
-            </div> 
+            <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
             ) : (
             <div className='preview-music__content'>
                 <div>

@@ -4,32 +4,40 @@ import MusicItem from "./MusicItem";
 function Music() {
 
     const [state, setState] = useState({isFetching: true})
-    const html = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/0C9EDM8jzXKFoPxX7JU3XQ?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`
 
     useEffect(() => {
-        fetch('http://localhost:1337/api/musics?populate=cover')
-            .then(data => data.json())
-            .then(json => setState({music: json, isFetching: false}))
-            .catch(err => console.log('Erreur: ',err))
+        async function fetchAndSort() {
+            const response = await fetch('http://localhost:1337/api/musics?populate=cover')
+            const json = await response.json()
+            // Trier les données en fonction de la date de sortie
+            const sorted = await json.data.sort((a, b) => new Date(a.attributes.releaseDate) - new Date(b.attributes.releaseDate))
+            // Ranger les données de la date la plus récente à la plus ancienne
+            const reversed = await sorted.reverse()
+            setState({music: reversed, isFetching: false})
+        }
+        fetchAndSort()
     }, [])
 
     return (
         state.isFetching ? (
-            <p>Loading...</p>
+            <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
         ) : (
-        <div style={{display: "flex", flexDirection:"column", alignItems:"center"}}>
-            <h2>Get a quick listen</h2>
-            <div style={{width: "500px"}} dangerouslySetInnerHTML={{__html:`${html}`}} />
-            <ul style={{display: "flex",
-                        flexDirection: "row",
-                        flexWrap: "wrap"
-                    }}>
-            {state.music.data.map(item => 
-                <li key={item.id}>
+        <div className="music">
+            <ul className="music__list">
+            {state.music.map((item, index) => index === 0 ? (
+                <div className='music-latest' key={item.id}>
                     <MusicItem  itemName={item.attributes.title} 
-                                itemCover={item.attributes.cover.data.attributes.formats.thumbnail.url}
-                                itemLink={item.attributes.link} />
-                </li>
+                                itemCover={item.attributes.cover.data.attributes.formats.small.url}
+                                itemLink={item.attributes.link}
+                                className="latest" />
+                </div>
+            ) : (
+                    <li className="music__list--item" key={item.id}>
+                        <MusicItem  itemName={item.attributes.title} 
+                                    itemCover={item.attributes.cover.data.attributes.formats.small.url}
+                                    itemLink={item.attributes.link} />
+                    </li>
+            )
             )}
             </ul>
         </div>
