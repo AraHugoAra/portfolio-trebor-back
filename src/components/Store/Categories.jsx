@@ -29,13 +29,13 @@ function Categories({activeCategory, setActiveCategory}) {
     )}
 
     return (
-        <div style={{width: "300px"}}>
+        <div className="categories">
             {categories.map((item) => (
-            <div key={item.id}>
-                <input onChange={(e) => handleCheck(e)} type="checkbox" value={item.attributes.name} name={item.attributes.name} id={item.attributes.name} />
+            <div className="categories__input" key={item.id}>
+                <input className="categories__input--checkbox" onChange={(e) => handleCheck(e)} type="checkbox" value={item.attributes.name} name={item.attributes.name} id={item.attributes.name} />
                 <label htmlFor={item.attributes.name}>{item.attributes.name}</label>
             </div>))}
-            <button onClick={() => handleReset()}>Reset</button>
+            <button className="categories__button-reset" onClick={() => handleReset()}>Reset</button>
         </div>
     )
 }

@@ -12,10 +12,11 @@ function CancelCheckout() {
 
     })
 
-    return(<div>
-        <h1 style={{textAlign: "center"}}>Your purchase has been canceled 😪</h1>
-        <p style={{textAlign: "center" ,textDecoration: "italic"}}>Redirecting to store...</p>
-        <Link to="/store"><p style={{textAlign: "center" ,textDecoration: "italic"}}>(click here if the redirection does not work)</p></Link>
+    return(<div className="checkout">
+        <h1 className="checkout__message">Your purchase has been canceled.</h1>
+        <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        <p className="checkout__redirecting">Redirecting to store... </p>
+        <Link to="/store"><p className="chcekout__link"> (click here if the redirection does not work)</p></Link>
     </div>)
 }
 

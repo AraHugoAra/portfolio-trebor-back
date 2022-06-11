@@ -9,16 +9,14 @@ function Store() {
     const [cart, updateCart] = useState([])
 
     return (
-        <div style={{
-                display: "flex",
-                flexDirection: "row-reverse",
-                justifyContent: "space-between",
-                alignItems: "stretch",
-                columnCount: "3"
-            }}>
-            <Categories activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
-            <ShoppingList activeCategory={activeCategory} cart={cart} updateCart={updateCart} />
-            <Cart cart={cart} updateCart={updateCart} />
+        <div className="store">
+            <div className="store__items-list-box">
+                <Categories activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+                <ShoppingList activeCategory={activeCategory} cart={cart} updateCart={updateCart} />
+            </div>
+            <div className="store__cart-box">
+                <Cart cart={cart} updateCart={updateCart} />
+            </div>
         </div>
     )
 }

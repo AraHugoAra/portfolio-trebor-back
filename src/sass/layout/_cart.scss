@@ -1,0 +1,62 @@
+.cart {
+    background-color: $colour-backgrounds;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &__button-close {
+        align-self: flex-end;
+        margin-top: 7px;
+        box-shadow: none;
+        background-color: rgba(0,0,0,0);
+        border: $colour-borders;
+        color: rgba($color: $colour-white, $alpha: .9);
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+        text-transform: capitalize;
+        &:hover {
+            background-color: rgba(0,0,0,0);
+        }
+    }
+    &__button-open {
+        margin-top: 7px;
+        box-shadow: none;
+        background-color: rgba(0,0,0,0);
+        border: $colour-borders;
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+        text-transform: capitalize;
+        &:hover {
+            background-color: rgba(0,0,0,0);
+        }
+    }
+    &__list {
+        width: 95%;
+        margin-left: 4%;
+        margin-right: 1%;
+        &--ul {
+            padding-left: 15px;
+            list-style-type: none;
+        }
+        &--title {
+            margin-bottom: 10px;
+        }
+        &--total {
+            margin-top: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
+    }
+    &__buttons {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        &--empty {
+            @include buttons-cart;
+        }
+        &--checkout {
+            @include buttons-cart;
+        }
+    }
+}

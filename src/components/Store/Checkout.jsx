@@ -36,7 +36,7 @@ function Checkout({cart}) {
     }
 
     return(<div>
-        <button onClick={redirectToCheckout} disabled={isLoading} >{!isLoading ? "Checkout" : "Loading..."}</button>
+        <button className="cart__buttons--checkout" onClick={redirectToCheckout} disabled={isLoading} >{!isLoading ? "Checkout" : "Loading..."}</button>
     </div>)
 }
 

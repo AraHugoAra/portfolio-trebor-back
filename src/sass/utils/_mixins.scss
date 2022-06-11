@@ -17,3 +17,11 @@
     //top: 10px;
     margin-left: 5%;
 }
+
+@mixin buttons-cart {
+        font-size: 1.5rem;
+        letter-spacing: 0px;
+        border-radius: 1px;
+        box-shadow: none;
+        background-color: $colour-borders;
+}

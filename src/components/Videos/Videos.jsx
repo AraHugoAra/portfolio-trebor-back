@@ -18,7 +18,7 @@ function Videos() {
         ) : (
         <div className = "videos">
             <ul className = "videos__list">
-            {state.videos.data.map((item, index) => 
+            {state.videos.data.map(item => 
                 <li key={item.id}>
                     <VideoItem  itemName={item.attributes.title} 
                                 itemVideo={item.attributes.video.data.attributes.url}

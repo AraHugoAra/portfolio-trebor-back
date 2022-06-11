@@ -1,0 +1,18 @@
+.categories {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    &__button-reset {
+        @include buttons-cart;
+        margin-left: 5px;
+    }
+    &__input {
+        margin-left: 7px;
+        margin-right: 8px;
+        &--checkbox {
+            margin-right: 4px;
+        }
+    }
+}

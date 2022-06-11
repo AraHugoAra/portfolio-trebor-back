@@ -8,24 +8,27 @@
 
 @import "./components/buttons";
 @import "./components/loader";
-@import "./components/music-item";
-@import "./components/video-item";
+@import "./components/form";
+@import "./components/networks";
+@import "./components/shop-item";
 
 
 @import "./layout/banner";
 @import "./layout/nav";
-@import "./layout/networks";
 @import "./layout/preview-music";
 @import "./layout/subscribe";
-@import "./layout/form";
 @import "./layout/footer";
 @import "./layout/preview-shop";
 @import "./layout/preview-videos";
-@import "./layout/music";
-@import "./layout/videos";
+@import "./layout/music-item";
+@import "./layout/video-item";
+@import "./layout/cart";
+@import "./layout/items-list";
+@import "./layout/categories";
 
 
 
-// @import "./pages/work";
-// @import "./pages/about";
-// @import "./pages/project";
+@import "./pages/music";
+@import "./pages/store";
+@import "./pages/videos";
+@import "./pages/checkout";

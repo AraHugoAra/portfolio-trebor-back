@@ -22,26 +22,28 @@ function ShopItem({itemName, itemUrl, itemId, itemPrice, cart, updateCart, itemI
     }
 
     return (
-        <div style={{margin: "30px"}}>
-            <img src={`${baseUrl}${itemUrl}`} alt={`img-${itemId}`} />
-            <h3>{itemName}</h3>
+        <div className="shop-item">
+            <img className="shop-item__cover" src={`${baseUrl}${itemUrl}`} alt={`img-${itemId}`} />
+            <h3 className="shop-item__name">{itemName}</h3>
             {!itemInStock ? ( 
-                <p style={{color:"red",fontStyle:"italic"}}>Not available <span style={{textDecoration:'line-through'}}>{itemPrice}€</span></p>
+                <p className="shop-item__price--unavailable">{itemPrice}€</p>
             ) : (
-                <p>{itemPrice}€</p>
+                <p className="shop-item__price">{itemPrice}€</p>
             )}
+            <div className="shop-item__buttons">
             {!currentItemAdded ? (
-                <button onClick={addToCart} disabled={!itemInStock && true} >🛒</button>
+                <button className="shop-item__buttons" onClick={addToCart} disabled={!itemInStock && true} >🛒</button>
             ) : (
-                <div style={{display: "flex", justifyContent: "space-evenly"}}>
-                <button onClick={addToCart} >➕</button>
-                <p>{currentItemAdded.amount}</p>
+                <div className="shop-item__buttons">
+                <button className="shop-item__buttons" onClick={addToCart} >➕</button>
+                <p className="shop-item__buttons--amount">{currentItemAdded.amount}</p>
                 {currentItemAdded.amount > 1 ? (
-                    <button onClick={deleteFromCart} >➖</button>
+                    <button className="shop-item__buttons" onClick={deleteFromCart} >➖</button>
                 ) : (
-                    <button onClick={deleteFromCart} >❌</button>)}
+                    <button className="shop-item__buttons" onClick={deleteFromCart} >❌</button>)}
                 </div>
             )}
+            </div>
         </div>
     )
 }

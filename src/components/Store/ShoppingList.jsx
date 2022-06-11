@@ -13,22 +13,14 @@ function ShoppingList({activeCategory, cart, updateCart}) {
 
     return (
         <div>
-            <ul style={{
-                height: "600px",
-                display: "flex",
-                flexWrap: "wrap",
-                flexDirection: "row",
-                justifyContent: "flex-start",
-                listStyle: "none",
-                columnCount: "3"
-                }}>
+            <ul className="items-list">
             {state.isFetching ? 
                 (<div className="lds-ring"><div></div><div></div><div></div><div></div></div>
                 ) : (
                 activeCategory.length !== 0 ? (
                     state.items.map(item => activeCategory.indexOf(`${item.attributes.category.data.attributes.name}`) !== -1  && 
                         (<li key={item.id}> 
-                            <ShopItem   itemUrl={item.attributes.image.data.attributes.formats.thumbnail.url}
+                            <ShopItem   itemUrl={item.attributes.image.data.attributes.url}
                                         itemName={item.attributes.name}
                                         itemId={item.id}
                                         itemPrice={item.attributes.price}
@@ -41,7 +33,7 @@ function ShoppingList({activeCategory, cart, updateCart}) {
                 )) : (
                     state.items.map(item => 
                         <li key={item.id}>
-                            <ShopItem   itemUrl={item.attributes.image.data.attributes.formats.thumbnail.url}
+                            <ShopItem   itemUrl={item.attributes.image.data.attributes.url}
                                         itemName={item.attributes.name}
                                         itemId={item.id}
                                         itemPrice={item.attributes.price}
