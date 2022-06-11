@@ -32,8 +32,9 @@
         justify-content: space-evenly;
         align-items: center;
         &--cover {
-            background-color: #bda08e;
-            border: $colour-borders solid 1px;
+            background-color: $colour-backgrounds;
+            //border: $colour-borders solid 1px;
+            border-radius: 50px;
             margin: 5px;
             max-height: 550px;
             //&:hover {

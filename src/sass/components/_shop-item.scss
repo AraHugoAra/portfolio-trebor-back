@@ -40,5 +40,12 @@
                 cursor:auto;
             }
         }
+        &--image{
+            width: 20px;
+            &-disabled{
+                width: 20px;
+                opacity: 0.5;
+            }
+        }
     }
 }

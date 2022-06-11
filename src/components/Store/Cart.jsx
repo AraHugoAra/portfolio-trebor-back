@@ -14,13 +14,18 @@ function Cart({cart, updateCart}) {
 
     return isOpen ? (
         <div className='cart'>
-            <button className='cart__button-close' onClick={() => setIsOpen(false)} >Close</button> 
+        <div className='cart__top'>
+            <img    className='cart__top--button-close'
+                    onClick={() => setIsOpen(false)}
+                    src="http://localhost:1337/uploads/close_1_c80dcc1c65.png?updated_at=2022-06-11T14:00:52.892Z"
+                    alt="button-close-cart"/>
+            <h2 className='cart__top--title'>Cart</h2>
+        </div> 
             <div className='cart__list'>
             {cart.length === 0 ? (
-                <div>Cart is empty.</div>
+                <div className='cart__list--empty'>Cart is empty.</div>
                 ):(
-                <>
-                    <h2 className='cart__list--title'>Cart</h2>
+                <> 
                     <ul className='cart__list--ul'>
                     {cart.map(item => 
                         <li className='cart__list--li' key={`item-${item.name}`}>{item.name}: {item.price}€ x{item.amount}</li>
@@ -35,7 +40,10 @@ function Cart({cart, updateCart}) {
                 )}
             </div>
         </div>
-    ) : (<button className='cart__button-open' onClick={() => setIsOpen(true)} >Open cart</button>) 
+            ) : (<img   className='cart__button-open'
+                        onClick={() => setIsOpen(true)}
+                        src="http://localhost:1337/uploads/shopping_bag_48a98e1ee0.png?updated_at=2022-06-11T14:05:41.662Z"
+                        alt="button-close-cart"/> ) 
 }
 
 export default Cart
