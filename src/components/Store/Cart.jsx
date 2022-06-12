@@ -28,7 +28,9 @@ function Cart({cart, updateCart}) {
                 <> 
                     <ul className='cart__list--ul'>
                     {cart.map(item => 
-                        <li className='cart__list--li' key={`item-${item.name}`}>{item.name}: {item.price}€ x{item.amount}</li>
+                        <li className='cart__list--li' key={`item-${item.name}`}>
+                            <img src={`http://localhost:1337${item.url}`} alt={`icon-${item.name}`} /><div>{item.name}<br />{item.price}€ x{item.amount}</div>
+                        </li>
                     )}
                     </ul>
                     <h3 className='cart__list--total'>Total: {totalCart}€</h3>
