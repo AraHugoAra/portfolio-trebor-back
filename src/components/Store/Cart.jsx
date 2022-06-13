@@ -42,10 +42,14 @@ function Cart({cart, updateCart}) {
                 )}
             </div>
         </div>
-            ) : (<img   className='cart__button-open'
+            ) : (
+            <>
+                <img    className='cart__button-open'
                         onClick={() => setIsOpen(true)}
                         src="http://localhost:1337/uploads/shopping_bag_48a98e1ee0.png?updated_at=2022-06-11T14:05:41.662Z"
-                        alt="button-close-cart"/> ) 
+                        alt="button-close-cart"/>
+                <span className={cart.length === 0 ? "dot--hidden" : "dot--cart"} ></span> 
+            </>) 
 }
 
 export default Cart

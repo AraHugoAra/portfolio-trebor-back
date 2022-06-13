@@ -3,10 +3,9 @@ import ShoppingList from "./ShoppingList"
 import Categories from "./Categories"
 import { useState } from "react"
 
-function Store() {
+function Store({cart, updateCart}) {
    
     const [activeCategory, setActiveCategory] = useState([])
-    const [cart, updateCart] = useState([])
 
     return (
         <div className="store">
