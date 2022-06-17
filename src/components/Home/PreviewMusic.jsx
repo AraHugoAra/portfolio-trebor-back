@@ -27,7 +27,7 @@ function PreviewMusic() {
                 <div className='preview-music__content--infos'>
                     <h2>Available Now</h2>
                     <h1>{state.image.data[0].attributes.title}</h1>
-                    <a href={state.image.data[0].attributes.link} ><button>Stream</button></a>
+                    <a href={state.image.data[0].attributes.link} rel="noreferrer" target="_blank" ><button>Stream</button></a>
                 </div> 
             </div>)}
             <a className='preview-music__view-all' href="/music"><h2>View All Releases</h2></a>  

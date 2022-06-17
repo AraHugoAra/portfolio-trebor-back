@@ -23,6 +23,7 @@
         &__cover{
             box-shadow: 2px 2px 4px;
             width: 50%;
+            animation: image-pop  $image-pop-duration calc($image-pop-delay/2) both;
         }
         &__infos{
             display: flex;

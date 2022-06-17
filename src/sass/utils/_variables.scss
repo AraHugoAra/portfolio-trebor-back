@@ -6,6 +6,10 @@ $colour-white: #fff;
 $colour-borders: rgba(255, 255, 255, 0.401);
 $colour-backgrounds: rgba(0, 0, 0, 0.204);
 
+$image-pop-duration: 700ms;
+$image-pop-delay: 350ms;
+$video-pop-duration: 1.5s;
+$video-pop-delay: 350ms;
 
 // backgrounds v1 (vif jaune-orange)
 /*
@@ -25,14 +29,3 @@ $background-tertiary: url(http://localhost:1337/uploads/purple_pink_watercolor_t
 $background-primary: url(http://localhost:1337/uploads/5409828_f5ac8eb639.jpg?updated_at=2022-06-08T14:17:33.559Z);
 //$background-primary: url(http://localhost:1337/uploads/soft_vintage_gradient_blur_background_with_pastel_colored_well_use_as_studio_room_product_presentation_banner_50e125bc4d.jpg?updated_at=2022-06-06T13:22:20.438Z);
 //$background-secondary: url(http://localhost:1337/uploads/2440239_4da52234bb.jpg?updated_at=2022-06-08T14:25:28.402Z);
-
-// $heading-shadow-size: .55rem;
-// $layout-margin: 6rem;
-// $grid-gutter: $layout-margin * .25;
-
-/* $heading-colors: (
-    orange: #cc8624,
-    pink: #cc2475,
-    blue: #2469cc,
-    green: #24cc24
-); */

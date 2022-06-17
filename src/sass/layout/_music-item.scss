@@ -7,6 +7,7 @@
     &__cover{
         width: 43%;
         box-shadow: 2px 2px 4px;
+        animation: image-pop $image-pop-duration $image-pop-delay both;
     }
     &__infos{
         width: 40%;

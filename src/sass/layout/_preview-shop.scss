@@ -33,13 +33,10 @@
         align-items: center;
         &--cover {
             background-color: $colour-backgrounds;
-            //border: $colour-borders solid 1px;
             border-radius: 50px;
             margin: 5px;
             max-height: 550px;
-            //&:hover {
-            //    opacity: 0.5;
-            //}
+            animation: image-pop  $image-pop-duration $image-pop-delay*1.5 both;
         }
         &--productbox {
             height: 550px;

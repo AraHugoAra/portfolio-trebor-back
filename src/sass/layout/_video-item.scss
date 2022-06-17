@@ -8,6 +8,7 @@
     }
     &__video {
         border-radius: 30px;
+        animation: video-pop $video-pop-duration $video-pop-delay both;
     }
     &__button {
         background: rgba(0,0,0,0);

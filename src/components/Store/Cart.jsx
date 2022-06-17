@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Checkout from './Checkout'
 
 function Cart({cart, updateCart}) {
+
     const [isOpen, setIsOpen] = useState(true)
     const initialTotal = 0
     const totalCart = cart.reduce((acc, currItem) => acc + (currItem.price * currItem.amount), initialTotal)
@@ -12,8 +13,9 @@ function Cart({cart, updateCart}) {
         document.title =`TRéBOR 🛒 ${totalCart}€`
         )}, [totalCart])
 
-    return isOpen ? (
-        <div className='cart'>
+    return (
+        <>
+        <div className={isOpen ? "cart active" : "cart"}>
         <div className='cart__top'>
             <img    className='cart__top--button-close'
                     onClick={() => setIsOpen(false)}
@@ -26,9 +28,9 @@ function Cart({cart, updateCart}) {
                 <div className='cart__list--empty'>Cart is empty.</div>
                 ):(
                 <> 
-                    <ul className='cart__list--ul'>
+                    <ul>
                     {cart.map(item => 
-                        <li className='cart__list--li' key={`item-${item.name}`}>
+                        <li key={`item-${item.name}`}>
                             <img src={`http://localhost:1337${item.url}`} alt={`icon-${item.name}`} /><div>{item.name}<br />{item.price}€ x{item.amount}</div>
                         </li>
                     )}
@@ -42,14 +44,14 @@ function Cart({cart, updateCart}) {
                 )}
             </div>
         </div>
-            ) : (
-            <>
-                <img    className='cart__button-open'
-                        onClick={() => setIsOpen(true)}
-                        src="http://localhost:1337/uploads/shopping_bag_48a98e1ee0.png?updated_at=2022-06-11T14:05:41.662Z"
-                        alt="button-close-cart"/>
-                <span className={cart.length === 0 ? "dot--hidden" : "dot--cart"} ></span> 
-            </>) 
+        <div className={!isOpen ? 'cart__button-open' : 'cart__button-open active'}>
+            <img    onClick={() => setIsOpen(true)}
+                    src="http://localhost:1337/uploads/shopping_bag_48a98e1ee0.png?updated_at=2022-06-11T14:05:41.662Z"
+                    alt="button-open-cart"/>
+            <span className={cart.length === 0 ? "dot--hidden" : "dot--cart"} ></span> 
+        </div>
+        </>
+    ) 
 }
 
 export default Cart

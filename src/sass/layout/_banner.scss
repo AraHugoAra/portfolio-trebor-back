@@ -2,7 +2,16 @@
     display: flex;
     justify-content: space-between;
     height: 80px;
- //   background-color: #ad811b2e;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: background-color 400ms ease-in;
+    &.sticky {
+        background-color: $colour-secondary;
+        opacity: 1;
+        z-index: 3;
+    }
     &__networks {
         display: flex;
         width: 33%;
@@ -11,6 +20,7 @@
         max-height: 80px; 
     }
     &__nav {
+    //    position: relative;
         width: 33%;
         display: flex;
         justify-content: space-around;
