@@ -21,7 +21,7 @@ function Networks({className}) {
             <ul className='networks'>
                 {state.networks.map(item => 
                     (<li key={`link-${item.id}`}>
-                        <a href={item.attributes.link}>
+                        <a href={item.attributes.link} rel="noreferrer" target="_blank">
                         <img    className="networks__logo" key={`img-${item.id}`} 
                                 src={className === "footer__networks" ? `http://localhost:1337${item.attributes.iconWhite.data.attributes.url}` : `http://localhost:1337${item.attributes.icon.data.attributes.url}`}
                                 alt={item.attributes.name} />

@@ -42,13 +42,20 @@
             height: 550px;
         }
         &--notdisplayed {
-            display: none;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            bottom: 300px;
+            transition: opacity 300ms ease-in-out;
+            opacity: 0;
+            
         }
         &--displayed {
             display: flex;
             justify-content: center;
             position: relative;
             bottom: 300px;
+            transition: opacity 300ms ease-in-out;
         }
     }
 }
