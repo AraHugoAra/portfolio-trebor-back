@@ -1,21 +1,29 @@
 .preview-shop {
     background-image: $background-secondary;
     background-size: cover;
-    height: 900px;
+    @include home-paddings;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     &__title {
-        position: relative;
-        right: 600px;
+        @include home-title;
     }
     &__view-all{
         height: 50px;
-        position: relative;
-        left: 580px;
-        &:hover {
-        border-bottom: #26110399 solid 1.5px;
+        @include home-view-all;
+        & h2 {
+            &:hover::after {
+                width: 100%;
+            }
+            &::after {
+                content: "";
+                display: block;
+                height: 2px;
+                background: $colour-accent;
+                transition: width 300ms ease-in-out;
+                width: 0;
+            }
         }
     }
     &__content {
@@ -23,12 +31,12 @@
         margin: 30px;
         width: 90%;
         max-width: 1400px;
-        height: 650px;
         padding-top: 30px;
         padding-bottom: 30px;
         border: solid 1px $colour-borders;
         border-radius: 50px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
         &--cover {
@@ -39,7 +47,7 @@
             animation: image-pop  $image-pop-duration $image-pop-delay*1.5 both;
         }
         &--productbox {
-            height: 550px;
+            height: 50%;
         }
         &--notdisplayed {
             display: flex;

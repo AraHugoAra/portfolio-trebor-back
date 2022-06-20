@@ -1,5 +1,6 @@
 .nav {
     &__link{
+        margin-right: 4px;
         &:hover::after {
             width: 100%;
         }
@@ -11,9 +12,6 @@
             height: 2px;
             position: relative;
             background: $colour-accent;
-            // Gradient underline:
-            /* background-color: #FFDEE9;
-            background-image: linear-gradient(270deg, #FFDEE9 0%, #B5FFFC 100%); */
             transition: width 300ms ease-in-out;
             width: 0;
         }

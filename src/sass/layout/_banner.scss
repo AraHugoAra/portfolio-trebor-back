@@ -14,17 +14,16 @@
     }
     &__networks {
         display: flex;
-        width: 33%;
+        width: 32%;
     }
     &__logo {
         max-height: 80px; 
     }
     &__nav {
-    //    position: relative;
-        width: 33%;
+        width: 35%;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        padding-right: 40px;
+        padding-right: 100px 8%;
     }
 }

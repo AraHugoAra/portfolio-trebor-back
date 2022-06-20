@@ -13,9 +13,7 @@ function VideoItem({itemName, itemVideo, itemPoster}) {
 
     return (
         <div className = "video-item">
-            <video ref={vidRef} className = "video-item__video" 
-                    width="600" height="600" 
-                    poster={`http://localhost:1337${itemPoster}`}>
+            <video ref={vidRef} className = "video-item__video" poster={`http://localhost:1337${itemPoster}`}>
                 <source src={`http://localhost:1337${itemVideo}`} />
             </video>
             <h2 className = "video-item__title">{itemName}</h2>

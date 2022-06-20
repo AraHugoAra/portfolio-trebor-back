@@ -25,7 +25,7 @@ function Music() {
         <div className="music">
             <ul className="music__list">
             {state.music.map((item, index) => index === 0 ? (
-                <div className='music-latest' key={item.id}>
+                <div className='music-latest-box' key={item.id}>
                     <MusicItem  itemName={item.attributes.title} 
                                 itemCover={item.attributes.cover.data.attributes.formats.small.url}
                                 itemLink={item.attributes.link}
