@@ -6,12 +6,18 @@
     @include home-paddings;
     &__title {
         @include home-title;
+        @include mobile-only {
+            right: 0;
+        }
     }
     &__view-all{
         height: 50px;
         @include home-view-all;
+        @include mobile-only {
+            left: 0;
         }
-        & h2 {
+        }
+        & a :not(button) {
         &:hover::after {
             width: 100%;
         }
@@ -36,11 +42,18 @@
         padding-left: 20px;
         border-radius: 50px;
         background-color: $colour-backgrounds;
+        @include tablet-only {
+            flex-direction: column-reverse;
+            padding-left: 0;
+        }
         &--cover{
             border: $colour-borders solid 1px;
             margin: 5px;
             width: 100%;
             animation: image-pop  $image-pop-duration $image-pop-delay both;
+            @include tablet-only {
+                border-radius: 10px;
+            }
         }
         &--infos{
             display: flex;

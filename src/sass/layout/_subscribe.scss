@@ -9,6 +9,9 @@
     &__title{
         color: #FFF;
         font-weight: 800;
+        @include mobile-only {
+            font-size: 3rem;
+        }
     }
     &__form {
         border: white solid 1.5px;

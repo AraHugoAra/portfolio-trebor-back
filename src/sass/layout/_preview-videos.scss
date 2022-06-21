@@ -8,10 +8,16 @@
     background-size: cover;
     &__title {
         @include home-title;
+        @include mobile-only {
+            right: 0;
+        }
     }
     &__view-all{
         height: 50px;
         @include home-view-all;
+        @include mobile-only {
+            left: 0;
+        }
         & h2 {
             &:hover::after {
                 width: 100%;
@@ -42,6 +48,9 @@
             align-items: center;
             order: 2;
             animation: carousel-animation 200ms ease-in-out both;
+            @include mobile-only {
+                display: none;
+            }
             & > video {
             width: 100%;
             }
@@ -49,6 +58,9 @@
             display: flex;
             justify-content: center;
             order: 1;
+            @include mobile-only {
+                display: none;
+            }
             & > video {
             width: 80%;
             }

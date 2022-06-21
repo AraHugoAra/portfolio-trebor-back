@@ -1,6 +1,14 @@
 .nav {
     &__link{
         margin-right: 4px;
+        & h2 {
+            @include tablet-only {
+                font-size: 1.5rem;
+            }
+            @include mobile-only {
+                font-size: 1rem;
+            }
+        }
         &:hover::after {
             width: 100%;
         }
@@ -17,6 +25,14 @@
         }
         &--active{
             border-bottom: $colour-accent solid 3px;
+            & h2 {
+                @include tablet-only {
+                    font-size: 1.5rem;
+                }
+                @include mobile-only {
+                    font-size: 1rem;
+                }
+            }
         }
     }
 }

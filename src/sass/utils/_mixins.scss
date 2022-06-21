@@ -15,9 +15,20 @@
 }
 
 @mixin buttons-cart {
-        font-size: 1.5rem;
-        letter-spacing: 0px;
-        border-radius: 1px;
-        box-shadow: none;
-        background-color: $colour-borders;
+    font-size: 1.5rem;
+    letter-spacing: 0px;
+    border-radius: 1px;
+    box-shadow: none;
+    background-color: $colour-borders;
+}
+
+@mixin tablet-only {
+    @media screen and (max-width: map-get($breakpoints, tablet)){
+        @content;
+    }
+}
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)){
+        @content;
+    }
 }

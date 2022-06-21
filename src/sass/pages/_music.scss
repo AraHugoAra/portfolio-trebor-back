@@ -10,12 +10,18 @@
         &--item{
             margin: 10px;
             width: 48%;
+            @include tablet-only {
+                width: 80%;
+            }
         }
     }
     &-latest{
         &-box{
             display: flex;
             justify-content: center ;
+            @include tablet-only {
+                background-color: $colour-backgrounds;
+            }
         }
         display: flex;
         flex-direction: row;
@@ -27,6 +33,10 @@
             box-shadow: 2px 2px 4px;
             width: 50%;
             animation: image-pop  $image-pop-duration calc($image-pop-delay/2) both;
+            @include tablet-only {
+                height: auto;
+                min-width: 170px;
+            }
         }
         &__infos{
             margin-left: 5%;
@@ -40,6 +50,12 @@
                 width: 100%;
                 font-size: 4rem;
                 margin-bottom: 5%;
+                @include tablet-only {
+                    font-size: 3rem;
+                }
+                @include mobile-only {
+                    font-size: 2rem;
+                }
             }
         }
     }

@@ -6,14 +6,15 @@ form {
         border-bottom: white solid 2px;
         color: #FFF; 
         font-size: 1.5rem;
-        width: 400px;
+        max-width: 400px;
+        width: 90%;
         height: 50px;
         margin: 20px;
-
         &::placeholder {
             color: #FFF;
             text-transform: uppercase;
             letter-spacing: 5px;
+            text-align: center;
         }
     }
     & button {

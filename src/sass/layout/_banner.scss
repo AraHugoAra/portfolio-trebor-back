@@ -6,7 +6,14 @@
     top: 0;
     left: 0;
     z-index: 2;
-    transition: background-color 400ms ease-in;
+    transition: all 400ms ease-in;
+    @include tablet-only {
+        height: 50px;
+    }
+    @include mobile-only {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
     &.sticky {
         background-color: $colour-secondary;
         opacity: 1;
@@ -15,9 +22,19 @@
     &__networks {
         display: flex;
         width: 32%;
+        @include mobile-only {
+            display: none;
+        }
     }
     &__logo {
-        max-height: 80px; 
+        max-height: 80px;
+        @include tablet-only {
+            max-height: 50px;
+        }
+        @include tablet-only {
+            max-height: 40px;
+            padding-top: 3px;
+        }
     }
     &__nav {
         width: 35%;
@@ -25,5 +42,8 @@
         justify-content: space-around;
         align-items: center;
         padding-right: 100px 8%;
+        @include mobile-only {
+            width: 70%;
+        }
     }
 }
