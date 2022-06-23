@@ -9,12 +9,11 @@ function Carousel() {
     const vidRef = useRef(null)
 
     useEffect(() => {
-        fetch('http://localhost:1337/api/videos?populate=video,poster')
-            .then(res => res.json())
-            .then(json => setState({
-                            videos: json,
-                            isFetching: false}))
-        }, [])
+        fetch('http://localhost:8000/videos')
+            .then(data => data.json())
+            .then(json => setState({videos: json, isFetching: false}))
+            .catch(err => console.log(err))
+    }, [])
 
     function handleMute() {
         vidRef.current.muted=false;

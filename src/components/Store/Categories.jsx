@@ -3,13 +3,13 @@ import { useEffect, useState } from "react"
 
 function Categories({activeCategory, setActiveCategory}) {
 
-    const [categories, setCategories] = useState([])
+    const [state, setState] = useState({isLoading: true})
 
     // Fetch categories
     useEffect(() => {
         fetch("http://localhost:1337/api/categories")
             .then(data => data.json())
-            .then(json => setCategories(json.data))
+            .then(json => setState({categories: json.data, isLoading: false}))
     }, [])
 
     function handleReset() {
@@ -29,14 +29,18 @@ function Categories({activeCategory, setActiveCategory}) {
     )}
 
     return (
+        state.isLoading === true ? (
+            <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        ) : (
         <div className="categories">
-            {categories.map((item) => (
+            {state.categories.map((item) => (
             <div className="categories__input" key={item.id}>
                 <input className="categories__input--checkbox" onChange={(e) => handleCheck(e)} type="checkbox" value={item.attributes.name} name={item.attributes.name} id={item.attributes.name} />
                 <label htmlFor={item.attributes.name}>{item.attributes.name}</label>
             </div>))}
             <button className="categories__button-reset" onClick={() => handleReset()}>Reset</button>
         </div>
+        )
     )
 }
 

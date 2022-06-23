@@ -6,7 +6,7 @@ function Videos() {
     const [state, setState] = useState({isFetching: true})
 
     useEffect(() => {
-        fetch('http://localhost:1337/api/videos?populate=video,poster')
+        fetch('http://localhost:8000/videos')
             .then(data => data.json())
             .then(json => setState({videos: json, isFetching: false}))
             .catch(err => console.log(err))
@@ -14,7 +14,7 @@ function Videos() {
 
     return (
         state.isFetching ? (
-            <p>Loading...</p>
+            <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
         ) : (
         <div className = "videos">
             <ul className = "videos__list">

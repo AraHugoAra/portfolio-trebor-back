@@ -7,10 +7,10 @@ function PreviewShop() {
     const baseUrl = "http://localhost:1337"
 
     useEffect(() => {
-        fetch("http://localhost:1337/api/shop-items?populate=image")
+        fetch('http://localhost:8000/store')
             .then(data => data.json())
             .then(json => setState({items: json.data, isFetching: false}))
-
+            .catch(err => console.log(err))
     }, [])
 
     const showButton = e => {

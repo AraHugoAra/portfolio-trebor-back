@@ -70,6 +70,7 @@
             opacity: 0;
             @include mobile-only {
                 bottom: 200px;
+                opacity: .7;
             }
         }
         &--displayed {

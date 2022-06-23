@@ -6,9 +6,10 @@ function ShoppingList({activeCategory, cart, updateCart}) {
     const [state, setState] = useState({isFetching: true})
 
     useEffect(() => {
-        fetch("http://localhost:1337/api/shop-items?populate=image,category")
+        fetch('http://localhost:8000/store')
             .then(data => data.json())
             .then(json => setState({items: json.data, isFetching: false}))
+            .catch(err => console.log(err))
     }, [])
 
     return (
