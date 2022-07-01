@@ -15,8 +15,8 @@ app.get('/', (req, res) => {
 app.get('/videos', (req, res) => {
         const options = {
             method: 'GET',
-            url: 'http://localhost:1337/api/videos?populate=video,poster',
-            headers: {Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN_SALT}`}
+            url: 'https://portfolio-strapi-autogithub.herokuapp.com/api/videos?populate=video,poster',
+            headers: {Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN_SALT_HEROKU}`}
         }
         axios.request(options).then((response) => {
             res.json(response.data)
@@ -27,8 +27,8 @@ app.get('/videos', (req, res) => {
 app.get('/store', (req, res) => {
     const options = {
         method: 'GET',
-        url: 'http://localhost:1337/api/shop-items?populate=image,category',
-        headers: {Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN_SALT}`}
+        url: 'https://portfolio-strapi-autogithub.herokuapp.com/api/shop-items?populate=image,category',
+        headers: {Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN_SALT_HEROKU}`}
     }
     axios.request(options).then((response) => {
         res.json(response.data)

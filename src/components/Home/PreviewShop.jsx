@@ -4,7 +4,7 @@ function PreviewShop() {
 
     const [state, setState] = useState({isFetching: true})
     const [display, setDisplay] = useState("notdisplayed")
-    const baseUrl = "http://localhost:1337"
+    const baseUrl = "https://portfolio-strapi-autogithub.herokuapp.com"
 
     useEffect(() => {
         fetch('http://localhost:8000/store')

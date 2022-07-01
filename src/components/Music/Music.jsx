@@ -7,7 +7,7 @@ function Music() {
 
     useEffect(() => {
         async function fetchAndSort() {
-            const response = await fetch('http://localhost:1337/api/musics?populate=cover')
+            const response = await fetch('https://portfolio-strapi-autogithub.herokuapp.com/api/musics?populate=cover')
             const json = await response.json()
             // Trier les données en fonction de la date de sortie
             const sorted = await json.data.sort((a, b) => new Date(a.attributes.releaseDate) - new Date(b.attributes.releaseDate))

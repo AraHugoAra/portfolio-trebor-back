@@ -32,8 +32,8 @@ function Carousel() {
                         <video  ref={vidRef} 
                                 controls autoPlay
                                 muted={true} 
-                                poster={`http://localhost:1337${item.attributes.poster.data.attributes.url}`} >
-                            <source src={`http://localhost:1337${item.attributes.video.data.attributes.url}`} />
+                                poster={`https://portfolio-strapi-autogithub.herokuapp.com${item.attributes.poster.data.attributes.url}`} >
+                            <source src={`https://portfolio-strapi-autogithub.herokuapp.com${item.attributes.video.data.attributes.url}`} />
                         </video>
                     </div>)
                 }
@@ -41,16 +41,16 @@ function Carousel() {
                     ((index === current +1 || index === 5) &&
                         <div className={index === current +1 ? "preview-videos__videos--next" : "preview-videos__videos--prev"} key={index}>
                             <video  muted={true}
-                                    poster={`http://localhost:1337${item.attributes.poster.data.attributes.url}`}  >
-                                <source src={`http://localhost:1337${item.attributes.video.data.attributes.url}`} />
+                                    poster={`https://portfolio-strapi-autogithub.herokuapp.com${item.attributes.poster.data.attributes.url}`}  >
+                                <source src={`https://portfolio-strapi-autogithub.herokuapp.com${item.attributes.video.data.attributes.url}`} />
                             </video>
                         </div>
                     ) : (
                     (index === current +1 || index === current -1) && 
                         <div className={index === current +1 ? "preview-videos__videos--next" : "preview-videos__videos--prev"} key={index}>
                             <video  muted={true} 
-                                    poster={`http://localhost:1337${item.attributes.poster.data.attributes.url}`}  >
-                                <source src={`http://localhost:1337${item.attributes.video.data.attributes.url}`} />
+                                    poster={`https://portfolio-strapi-autogithub.herokuapp.com${item.attributes.poster.data.attributes.url}`}  >
+                                <source src={`https://portfolio-strapi-autogithub.herokuapp.com${item.attributes.video.data.attributes.url}`} />
                             </video>
                         </div>)
                     )

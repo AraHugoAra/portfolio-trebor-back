@@ -31,7 +31,7 @@ function Cart({cart, updateCart}) {
                     <ul>
                     {cart.map(item => 
                         <li key={`item-${item.name}`}>
-                            <img src={`http://localhost:1337${item.url}`} alt={`icon-${item.name}`} /><div>{item.name}<br />{item.price}€ x{item.amount}</div>
+                            <img src={`https://portfolio-strapi-autogithub.herokuapp.com${item.url}`} alt={`icon-${item.name}`} /><div>{item.name}<br />{item.price}€ x{item.amount}</div>
                         </li>
                     )}
                     </ul>

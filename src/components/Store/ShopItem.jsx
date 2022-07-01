@@ -1,6 +1,6 @@
 function ShopItem({itemName, itemUrl, itemId, itemPrice, cart, updateCart, itemInStock, itemStripeApi}) {
 
-    const baseUrl = "http://localhost:1337"
+    const baseUrl = "https://portfolio-strapi-autogithub.herokuapp.com"
     const currentItemAdded = cart.find((item) => item.name === itemName)
     const cartFilteredCurrentItem = cart.filter((item) => item.name !== itemName)
 
