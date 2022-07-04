@@ -7,7 +7,7 @@ function Music() {
 
     useEffect(() => {
         async function fetchAndSort() {
-            const response = await fetch('https://portfolio-strapi-autogithub.herokuapp.com/api/musics?populate=cover')
+            const response = await fetch('https://portfolio-trebor-strapi.herokuapp.com/api/musics?populate=cover')
             const json = await response.json()
             // Trier les données en fonction de la date de sortie
             const sorted = await json.data.sort((a, b) => new Date(a.attributes.releaseDate) - new Date(b.attributes.releaseDate))
@@ -27,14 +27,14 @@ function Music() {
             {state.music.map((item, index) => index === 0 ? (
                 <div className='music-latest-box' key={item.id}>
                     <MusicItem  itemName={item.attributes.title} 
-                                itemCover={item.attributes.cover.data.attributes.formats.small.url}
+                                itemCover={item.attributes.cover.data.attributes.url}
                                 itemLink={item.attributes.link}
                                 className="latest" />
                 </div>
             ) : (
                     <li className="music__list--item" key={item.id}>
                         <MusicItem  itemName={item.attributes.title} 
-                                    itemCover={item.attributes.cover.data.attributes.formats.small.url}
+                                    itemCover={item.attributes.cover.data.attributes.url}
                                     itemLink={item.attributes.link} />
                     </li>
             )

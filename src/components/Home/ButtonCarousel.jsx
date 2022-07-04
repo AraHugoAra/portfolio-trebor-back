@@ -14,9 +14,9 @@ function ButtonCarousel({action, setCurrent, current, setDisplayed}) {
                 <img    onClick={handleClick}
                         className={action === "-" ? "preview-videos__button--prev" : "preview-videos__button--next"} 
                         src={action === "+" ? (
-                            "http://localhost:1337/uploads/next_ff5f2a7df6.png?updated_at=2022-06-11T13:01:23.846Z"
+                            "https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_small_next_ff5f2a7df6_a0b3b4d01f.png?width=500&height=500"
                             ) : (
-                            "http://localhost:1337/uploads/previous_bd56f6d8a5.png?updated_at=2022-06-11T13:01:08.313Z"
+                            "https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_small_previous_bd56f6d8a5_da239d5977.png?width=500&height=500"
                             )} 
                         alt={`button-${action}`} />
         </div>

@@ -22,7 +22,7 @@ function Banner ({cart}) {
     return (
         <div className={offset <= 80 ? "banner" : "banner sticky"}>
             <Networks className="banner__networks"/>
-            <Link to="/"><img className="banner__logo" src="http://localhost:1337/uploads/Logo_T_Re_BOR_fond_transparent_2c9ae5649c.png?updated_at=2022-05-31T10:38:47.946Z" alt="logo-trebor" /></Link>
+            <Link to="/"><img className="banner__logo" src="https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_Logo_T_Re_BOR_fond_transparent_2c9ae5649c_cf18bf370c.png?width=1000&height=360" alt="logo-trebor" /></Link>
             <Nav cart={cart}/>
         </div>
     )

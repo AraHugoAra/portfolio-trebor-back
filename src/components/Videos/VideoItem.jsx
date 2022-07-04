@@ -13,8 +13,8 @@ function VideoItem({itemName, itemVideo, itemPoster}) {
 
     return (
         <div className = "video-item">
-            <video ref={vidRef} className = "video-item__video" poster={`https://portfolio-strapi-autogithub.herokuapp.com${itemPoster}`}>
-                <source src={`https://portfolio-strapi-autogithub.herokuapp.com${itemVideo}`} />
+            <video ref={vidRef} className = "video-item__video" poster={`${itemPoster}`}>
+                <source src={`${itemVideo}`} />
             </video>
             <h2 className = "video-item__title">{itemName}</h2>
             <button hidden={!displayed} onClick={handlePlayVIdeo} className = "video-item__button" >▶</button>

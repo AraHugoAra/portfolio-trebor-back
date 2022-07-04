@@ -1,6 +1,5 @@
 function ShopItem({itemName, itemUrl, itemId, itemPrice, cart, updateCart, itemInStock, itemStripeApi}) {
 
-    const baseUrl = "https://portfolio-strapi-autogithub.herokuapp.com"
     const currentItemAdded = cart.find((item) => item.name === itemName)
     const cartFilteredCurrentItem = cart.filter((item) => item.name !== itemName)
 
@@ -23,7 +22,7 @@ function ShopItem({itemName, itemUrl, itemId, itemPrice, cart, updateCart, itemI
 
     return (
         <div className="shop-item">
-            <img className="shop-item__cover" src={`${baseUrl}${itemUrl}`} alt={`img-${itemId}`} />
+            <img className="shop-item__cover" src={`${itemUrl}`} alt={`img-${itemId}`} />
             <h3 className="shop-item__name">{itemName}</h3>
             {!itemInStock ? ( 
                 <p className="shop-item__price--unavailable">{itemPrice}€</p>
@@ -34,27 +33,27 @@ function ShopItem({itemName, itemUrl, itemId, itemPrice, cart, updateCart, itemI
             {!currentItemAdded ? (
                 <button className="shop-item__buttons" onClick={addToCart} disabled={!itemInStock} >
                     <img    className={itemInStock ? "shop-item__buttons--image" : "shop-item__buttons--image-disabled"}
-                            src="http://localhost:1337/uploads/shopping_cart_e145666e46.png?updated_at=2022-06-11T13:00:42.474Z" 
+                            src="https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_shopping_cart_e145666e46_8dc356e242.png?width=512&height=512" 
                             alt="button-add" />
                 </button>
             ) : (
                 <div className="shop-item__buttons">
                 <button className="shop-item__buttons" onClick={addToCart} >
                     <img    className="shop-item__buttons--image"
-                                src="http://localhost:1337/uploads/plus_b902f1b2a2.png?updated_at=2022-06-11T13:00:56.468Z" 
+                                src="https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_plus_b902f1b2a2_0bb07393ba.png?width=512&height=512" 
                                 alt="button-plus" />
                 </button>
                 <p className="shop-item__buttons--amount">{currentItemAdded.amount}</p>
                 {currentItemAdded.amount > 1 ? (
                     <button className="shop-item__buttons" onClick={deleteFromCart} >
                         <img    className="shop-item__buttons--image"
-                                src="http://localhost:1337/uploads/minus_1_d52d6c71f0.png?updated_at=2022-06-11T13:40:19.404Z" 
+                                src="https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_minus_1_d52d6c71f0_6fbdc12900.png?width=512&height=512" 
                                 alt="button-minus" />
                     </button>
                 ) : (
                     <button className="shop-item__buttons" onClick={deleteFromCart} >
                         <img    className="shop-item__buttons--image"
-                                src="http://localhost:1337/uploads/delete_9efffd2cfa.png?updated_at=2022-06-11T13:01:00.956Z" 
+                                src="https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_delete_9efffd2cfa_2c95a61ab7.png?width=512&height=512" 
                                 alt="button-delete" />
                     </button>)}
                 </div>

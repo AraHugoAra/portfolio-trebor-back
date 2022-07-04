@@ -16,7 +16,7 @@ function Subscribe() {
 // eslint-disable-next-line
         const mailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (`${input}`.match(mailFormat)) {
-            fetch('https://portfolio-strapi-autogithub.herokuapp.com/api/subscribers', {
+            fetch('https://portfolio-trebor-strapi.herokuapp.com/api/subscribers', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

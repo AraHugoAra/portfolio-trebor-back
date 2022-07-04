@@ -7,7 +7,7 @@ function Categories({activeCategory, setActiveCategory}) {
 
     // Fetch categories
     useEffect(() => {
-        fetch("https://portfolio-strapi-autogithub.herokuapp.com/api/categories")
+        fetch("https://portfolio-trebor-strapi.herokuapp.com/api/categories")
             .then(data => data.json())
             .then(json => setState({categories: json.data, isLoading: false}))
     }, [])

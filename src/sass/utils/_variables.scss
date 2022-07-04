@@ -11,9 +11,9 @@ $image-pop-delay: 350ms;
 $video-pop-duration: 1.5s;
 $video-pop-delay: 350ms;
 
-$background-secondary: url(http://localhost:1337/uploads/v960_ning_05_7721266831.jpg?updated_at=2022-06-06T13:26:23.255Z);
-$background-tertiary: url(http://localhost:1337/uploads/purple_pink_watercolor_texture_background_12848d7cf3.jpg?updated_at=2022-06-06T13:26:47.477Z);
-$background-primary: url(http://localhost:1337/uploads/5409828_f5ac8eb639.jpg?updated_at=2022-06-08T14:17:33.559Z);
+$background-secondary: url(https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_v960_ning_05_7721266831_0546de1899.jpg?width=5000&height=3334);
+$background-tertiary: url(https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_purple_pink_watercolor_texture_background_12848d7cf3_0f8dc89abe.jpg?width=3000&height=2000);
+$background-primary: url(https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_5409828_f5ac8eb639_17aa049e70.jpg?width=3000&height=2000);
 
 $breakpoints: (
     "mobile": "700px",

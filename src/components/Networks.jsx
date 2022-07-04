@@ -5,7 +5,7 @@ function Networks({className}) {
     const [state, setState] = useState({isLoading: true})
     
     useEffect(() => {
-        fetch("https://portfolio-strapi-autogithub.herokuapp.com/api/networks?populate=icon,iconWhite")
+        fetch("https://portfolio-trebor-strapi.herokuapp.com/api/networks?populate=icon,iconWhite")
             .then(res => res.json())
             .then(json => {
                 setState({networks: json.data, isLoading: false})
@@ -23,7 +23,7 @@ function Networks({className}) {
                     (<li key={`link-${item.id}`}>
                         <a href={item.attributes.link} rel="noreferrer" target="_blank">
                         <img    className="networks__logo" key={`img-${item.id}`} 
-                                src={className === "footer__networks" ? `https://portfolio-strapi-autogithub.herokuapp.com${item.attributes.iconWhite.data.attributes.url}` : `https://portfolio-strapi-autogithub.herokuapp.com${item.attributes.icon.data.attributes.url}`}
+                                src={className === "footer__networks" ? `${item.attributes.iconWhite.data.attributes.url}` : `${item.attributes.icon.data.attributes.url}`}
                                 alt={item.attributes.name} />
                         </a>
                     </li>)

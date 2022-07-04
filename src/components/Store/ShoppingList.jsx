@@ -6,10 +6,16 @@ function ShoppingList({activeCategory, cart, updateCart}) {
     const [state, setState] = useState({isFetching: true})
 
     useEffect(() => {
-        fetch('http://localhost:8000/store')
-            .then(data => data.json())
-            .then(json => setState({items: json.data, isFetching: false}))
-            .catch(err => console.log(err))
+        async function fetchAndSort() {
+            const response = await fetch('http://localhost:8000/store')
+            const json = await response.json()
+            // Trier les données en fonction de l'id
+            const sorted = await json.data.sort((a, b) => a.id - b.id)
+            // Ranger les données de la date la plus récente à la plus ancienne
+            const reversed = await sorted.reverse()
+            setState({items: reversed, isFetching: false})
+        }
+        fetchAndSort()
     }, [])
 
     return (

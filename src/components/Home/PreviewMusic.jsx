@@ -5,7 +5,7 @@ function PreviewMusic() {
  const [state, setState] = useState({isFetching: true,})
 
     useEffect(() => {
-        fetch('https://portfolio-strapi-autogithub.herokuapp.com/api/musics?populate=cover')
+        fetch('https://portfolio-trebor-strapi.herokuapp.com/api/musics?populate=cover')
             .then(res => res.json())
             .then(json => setState({
                             image: json,
@@ -21,7 +21,7 @@ function PreviewMusic() {
             <div className='preview-music__content'>
                 <div>
                     <img    className='preview-music__content--cover'
-                            src={`https://portfolio-strapi-autogithub.herokuapp.com${state.image.data[0].attributes.cover.data.attributes.formats.small.url}`} 
+                            src={`${state.image.data[0].attributes.cover.data.attributes.formats.small.url}`} 
                             alt={`cover-${state.image.data[0].attributes.title}`} />
                 </div>
                 <div className='preview-music__content--infos'>

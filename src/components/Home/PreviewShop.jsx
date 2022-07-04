@@ -4,13 +4,16 @@ function PreviewShop() {
 
     const [state, setState] = useState({isFetching: true})
     const [display, setDisplay] = useState("notdisplayed")
-    const baseUrl = "https://portfolio-strapi-autogithub.herokuapp.com"
 
     useEffect(() => {
-        fetch('http://localhost:8000/store')
-            .then(data => data.json())
-            .then(json => setState({items: json.data, isFetching: false}))
-            .catch(err => console.log(err))
+        async function fetchAndSort() {
+            const response = await fetch('http://localhost:8000/store')
+            const json = await response.json()
+            // Trier les données en fonction de l'id
+            const sorted = await json.data.sort((a, b) => a.id - b.id)
+            setState({items: sorted, isFetching: false})
+        }
+        fetchAndSort()
     }, [])
 
     const showButton = e => {
@@ -35,13 +38,13 @@ function PreviewShop() {
                                 key={`div-${item.id}`}  
                                 onMouseEnter={e => showButton(e)}
                                 onMouseLeave={e => hideButton(e)}>
-                                <img className="preview-shop__content--cover" key={`img-${item.id}`} src={`${baseUrl}${item.attributes.image.data.attributes.formats.medium.url}`} alt="displayed-items" />  
-                                <a className={`preview-shop__content--${display}`} href="http://localhost:3000/store" key={`link-${item.id}`}><button>Buy Now</button></a>
+                                <img className="preview-shop__content--cover" key={`img-${item.id}`} src={`${item.attributes.image.data.attributes.formats.medium.url}`} alt="displayed-items" />  
+                                <a className={`preview-shop__content--${display}`} href="/store" key={`link-${item.id}`}><button>Buy Now</button></a>
                         </div>      
             ))}
                 </div>
             )}
-                <a className="preview-shop__view-all" href="http://localhost:3000/store"><h2>Shop All</h2></a>
+                <a className="preview-shop__view-all" href="/store"><h2>Shop All</h2></a>
         </div>
     )
 }

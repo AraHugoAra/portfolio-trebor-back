@@ -19,7 +19,7 @@ function Cart({cart, updateCart}) {
         <div className='cart__top'>
             <img    className='cart__top--button-close'
                     onClick={() => setIsOpen(false)}
-                    src="http://localhost:1337/uploads/close_1_c80dcc1c65.png?updated_at=2022-06-11T14:00:52.892Z"
+                    src="https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_close_1_c80dcc1c65_7997aa0b0c.png?width=512&height=512"
                     alt="button-close-cart"/>
             <h2 className='cart__top--title'>Cart</h2>
         </div> 
@@ -31,7 +31,7 @@ function Cart({cart, updateCart}) {
                     <ul>
                     {cart.map(item => 
                         <li key={`item-${item.name}`}>
-                            <img src={`https://portfolio-strapi-autogithub.herokuapp.com${item.url}`} alt={`icon-${item.name}`} /><div>{item.name}<br />{item.price}€ x{item.amount}</div>
+                            <img src={`${item.url}`} alt={`icon-${item.name}`} /><div>{item.name}<br />{item.price}€ x{item.amount}</div>
                         </li>
                     )}
                     </ul>
@@ -46,7 +46,7 @@ function Cart({cart, updateCart}) {
         </div>
         <div className={!isOpen ? 'cart__button-open' : 'cart__button-open active'}>
             <img    onClick={() => setIsOpen(true)}
-                    src="http://localhost:1337/uploads/shopping_bag_48a98e1ee0.png?updated_at=2022-06-11T14:05:41.662Z"
+                    src="https://portfolio-trebor.s3.eu-west-3.amazonaws.com/thumbnail_shopping_bag_48a98e1ee0_6a0885f244.png?width=512&height=512"
                     alt="button-open-cart"/>
             <span className={cart.length === 0 ? "dot--hidden" : "dot--cart"} ></span> 
         </div>
