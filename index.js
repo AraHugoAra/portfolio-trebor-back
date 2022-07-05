@@ -38,4 +38,4 @@ app.get('/store', (req, res) => {
 }
 )
 
-app.listen(8000, () => console.log(`Server is Running on ${PORT}`))
+app.listen(PORT, () => console.log(`Server is Running on ${PORT}`))
