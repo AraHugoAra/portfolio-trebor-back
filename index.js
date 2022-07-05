@@ -9,10 +9,9 @@ const app = express()
 app.use(cors())
 
 // Request and reponse template
-
-/* app.get('/', (req, res) => {
-    res.json('hi')
-}) */
+app.get('/', (req, res) => {
+    res.json('Hello World')
+})
 
 app.get('/videos', (req, res) => {
         const options = {
